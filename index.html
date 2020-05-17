@@ -3,9 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introduce</title>
+  <link rel="stylesheet" type="text/css" href="intro.css">
+  <title>Introduction</title>
 </head>
 <body>
-  高島です。
+  <div class="entry-title">
+    <h1>高島です。</h1>
+  </div>
+
+  <nav id="gnav">
+    <div class="gnav-inner" id="menu-scroll">
+      <div class="menu"><a href="https://soraemonpockt.hateblo.jp"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></div>
+          <div class="menu"><a href="https://soraemonpockt.hateblo.jp/about"><i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT</a></div>
+          <div class="menu"><a href="https://soraemonpockt.hateblo.jp/about"><i class="fa fa-envelope-o" aria-hidden="true"></i> CONTACT</a></div>
+    </div>
+  </nav>
+
+  <div class="entry-footer-profile">
+    <div class="entry-footer-profile-title"><i class="blogicon-subscribe"></i> Profile</div>
+    <div class="entry-footer-profile-body">
+        <div class="entry-footer-profile-left"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/s/soraemonpockt/20200407/20200407174257.jpg" class="entry-footer-profile-icon" alt="プロフィールアイコン">
+            <p class="entry-footer-profile-id"><a href="https://twitter.com/soraemonpockts">id:soraemonpockt</a></p>
+        </div>
+        <div class="entry-footer-profile-right">
+            <div class="entry-footer-profile-description">この記事を書いているのは、とある大学の情報工学系の学部4年です。話はTwitterでききます。</div>
+            <div class="entry-footer-follow-buttons">
+                <a class="instagram" href="https://www.instagram.com/soraskygood/" target="">
+                    <i class="blogicon-instagram lg"></i>
+                    <span class="inner-text">Instagram</span>
+                </a>
+                <a class="twitter" href="https://twitter.com/soraemonpockts" target="">
+                    <i class="blogicon-twitter lg"></i>
+                    <span class="inner-text">Twitter</span>
+                </a>
+                <a class="hatena" href="https://soraemonpockt.hateblo.jp" target="">
+                    <i class="blogicon-hatenablog lg"></i>
+                    <span class="inner-text">Hatena</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="twitter-timeline" href="https://twitter.com/soraemonpockts?ref_src=twsrc%5Etfw" width="280px" height="840px">Tweets by soraemonpockts</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div id=”copyright”>Copyright ©soraemonpockt All rights reserved.</div>
+
+<ul class="toTop-nav">
+<li><a href="javascript:void(0);" onclick="smoothScroll(0);return false;"><i class="blogicon-chevron-up"></i></a></li>
+<li><a href="https://soraemonpockt.hateblo.jp"><i class="blogicon-home"></i></a></li>
+</ul>
+<script>
+function smoothScroll(o){var e=window.pageYOffset,l=o>e;setTimeout(function(){l&&o>=e?(e=e+(o-e)/20+1,window.scrollTo(0,e),setTimeout(arguments.callee,10)):!l&&e>=o?(e=e-(e-o)/20-1,window.scrollTo(0,e),setTimeout(arguments.callee,10)):window.scrollTo(0,o)},10)}
+</script>
 </body>
 </html>
