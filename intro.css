@@ -74,18 +74,18 @@
 }
 /* スマートフォン */
 @media only screen and (max-width: 767px) {
-.entry-footer-profile-body {
-    -webkit-flex-wrap: nowrap; 
-    flex-wrap: wrap;
-}
-  .entry-footer-profile-left {
-    width: 100%;
-    padding: 20px 20px 0 20px;
+  .entry-footer-profile-body {
+      -webkit-flex-wrap: nowrap; 
+      flex-wrap: wrap;
   }
-  .entry-footer-profile-right {
-    width: 100%;
-    padding: 0 20px 20px 20px;
-}
+    .entry-footer-profile-left {
+      width: 100%;
+      padding: 20px 20px 0 20px;
+    }
+    .entry-footer-profile-right {
+      width: 100%;
+      padding: 0 20px 20px 20px;
+  }
 }
 /* フォローボタン */
 
@@ -190,40 +190,40 @@ z-index: 999; }
   background: rgba(0, 0, 0, 0.3);
   border-radius: 50px;
   text-align: center; }
-  .toTop-nav li:first-child {
-    margin-right: 10px; }
-  .toTop-nav li a {
-    display: block;
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
-    line-height: 50px; }
-    .toTop-nav li a {
-      color: #fff;
-      text-decoration: none; }
-      .toTop-nav li a:visited {
-        color: #fff; }
-      .toTop-nav li a:hover {
-        color: #fff;
-        text-decoration: underline; }
-      .toTop-nav li a:active, .toTop-nav li a:focus {
-        color: #fff; }
-    .toTop-nav li a:hover {
-      text-decoration: none; }
+.toTop-nav li:first-child {
+  margin-right: 10px; }
+.toTop-nav li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px; }
+.toTop-nav li a {
+  color: #696969;
+  text-decoration: none; }
+.toTop-nav li a:visited {
+  color: #f10e0e; }
+.toTop-nav li a:hover {
+  color: #fff;
+  text-decoration: underline; }
+.toTop-nav li a:active, .toTop-nav li a:focus {
+  color: rgb(47, 15, 226); }
+.toTop-nav li a:hover {
+  text-decoration: none; }
 
-        .entry-title {
-          color: #0000cd;
-          font-size: 1.5em;
-          text-stroke: 1.2px #000;
-          -webkit-text-stroke: 1.2px #000;
-          font-family:'メイリオ', 'Meiryo', sans-serif;
-          -webkit-animation: bound 1s ease-in-out;
-        }
+  .entry-title {
+    color: #0000cd;
+    font-size: 1.5em;
+    text-stroke: 1.2px #000;
+    -webkit-text-stroke: 1.2px #000;
+    font-family:'メイリオ', 'Meiryo', sans-serif;
+    -webkit-animation: bound 1s ease-in-out;
+  }
 
-      @-webkit-keyframes bound {
-        0% {transform: scale(0) translate(0,-500px);}
-        50% {transform: scaleX(2) translate(0,200px);}
-        70% {transform: scaleY(.5) translate(0,-100px);}
-        90% {transform: scaleX(1.5) translate(0,50px);}
-        100% {transform: scale(1) translate(0,0);}
-      }
+  @-webkit-keyframes bound {
+    0% {transform: scale(0) translate(0,-500px);}
+    50% {transform: scaleX(2) translate(0,200px);}
+    70% {transform: scaleY(.5) translate(0,-100px);}
+    90% {transform: scaleX(1.5) translate(0,50px);}
+    100% {transform: scale(1) translate(0,0);}
+  }
