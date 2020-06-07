@@ -641,8 +641,8 @@ function main() {
 		if (!gameclear && !gameover && gamestart) {
 			context.font = "bold 50px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.2)";
-			context.fillText("SHOT  : PRESS [Z]    MOVE  : ARROW KEYS", WIDTH / 4, HEIGHT * 2 / 3);
-			context.fillText("PAUSE : PRESS [X]", WIDTH / 4, HEIGHT * 5 / 6);
+			context.fillText("SHOT  : [Z]    MOVE  : ARROW KEYS", WIDTH / 4, HEIGHT * 2 / 3);
+			context.fillText("PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6);
 			context.font = "bold 40px sans-serif";
 			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12);
 		}
