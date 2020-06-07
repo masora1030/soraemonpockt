@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta property='og:type' content='website'>
+    <meta property='og:title' content='Sora Takashima Portforio'>
+    <meta property='og:url' content='https://masora1030.github.io/soraemonpockt/'>
+    <meta property='og:description' content='Sora Takashima Portforio'>
+    <meta property="og:image" content="img/ogp.png">
+    <meta name="description" content="Sora Takashima Portforio" />
+    <title>Introduction</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link href="../static/css/reset.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="../static/css/photoswipe/photoswipe.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="../static/css/photoswipe/default-skin/default-skin.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../static/img/favicon.ico" />
+    <link rel=”canonical” href=”https://masora1030.github.io/soraemonpockt/” />
+</head>
+<body>
+
+
+    <div class="wrapper">
+
+    <!-- .gnav -->
+    <nav class="gnav" class="fixed">
+      <ul class="gnav-list">
+        <li class="gnav-item"><a class="gnav-link" href="#about-section">ABOUT</a></li>
+        <li class="gnav-item"><a class="gnav-link" href="#education-section">EDUCATION</a></li>
+        <li class="gnav-item"><a class="gnav-link" href="#experience-section">EXPERIENCE</a></li>
+        <li class="gnav-item"><a class="gnav-link" href="#research-section">RESEARCH</a></li>
+        <li class="gnav-item"><a class="gnav-link" href="#contact-section">CONTACT</a></li>
+      </ul>
+    </nav>
+    <!-- /.gnav -->
+
+    <!-- .header -->
+    <header class="header">
+      <canvas id="canvas" width="1400" height="700" ></canvas>
+      <script src="../static/main.js"></script>
+    </header>
+    <div class="bottons">
+        <button class="bottone" name="button01" type="button" onclick="gameStart();">Game<br>Start</button>
+        <button class="bottone" name="button02" type="button" onclick="gameEnd();">Game<br>Reset</button>
+    </div>
+    <!-- /.header -->
+
+    <main class="content">
+
+      <!-- .works-section -->
+        <!--
+      <section class="works-section section" id="works-section">
+        <div class="inner">
+          <div class="section-heading">
+            <h2 class="heading-primary">WORKS</h2>
+          </div>
+          <div class="section-lead">
+            <p>Web（デザインとコーディング）制作の記録です。<br>デザイン練習用の架空サイト（ファーストビューのみ）も含んでおります。</p>
+          </div>
+          <div class="section-body works">
+            <div class="works-list js-my-gallery">
+              <figure class="works-item">
+                <a href="../static/img/works/company.jpg" data-size="960x720" class="works-image-wrapper works-link hover-action">
+                  <img class="works-image lazyload fadein" src="../static/img/placeholder4x3.png" data-src="img/works/company.jpg"
+                       alt="" />
+                </a>
+                <figcaption class="works-body">
+                  <div class="works-title">サイト名が入る</div>
+                  <div class="works-text">Design / Coding(Responsive) / WordPress</div>
+                  <div class="works-url"><a class="works-url-link" href="https://yahoo.co.jp" target="_blank">Link</a>
+                  </div>
+                </figcaption>
+              </figure>
+              <figure class="works-item">
+                <a href="../static/img/works/hairsalon.jpg" data-size="960x720"
+                   class="works-image-wrapper works-link hover-action">
+                  <img class="works-image lazyload fadein" src="../static/img/placeholder4x3.png"
+                    data-src="img/works/hairsalon.jpg" alt="" />
+                </a>
+                <figcaption class="works-body">
+                  <div class="works-title">サイト名が入る</div>
+                  <div class="works-text">Design / Coding(Responsive) </div>
+                  <div class="works-url"><a class="works-url-link" href="https://yahoo.co.jp" target="_blank">Link</a>
+                  </div>
+                </figcaption>
+              </figure>
+              <figure class="works-item">
+                <a href="../static/img/works/girly.jpg" data-size="960x720" class="works-image-wrapper works-link hover-action">
+                  <img class="works-image lazyload fadein" src="../static/img/placeholder4x3.png" data-src="img/works/girly.jpg"
+                       alt="" />
+                </a>
+                <figcaption class="works-body">
+                  <div class="works-title">サイト名が入る</div>
+                  <div class="works-text">Design</div>
+                </figcaption>
+              </figure>
+              <figure class="works-item">
+                <a href="../static/img/works/school.jpg" data-size="960x720" class="works-image-wrapper works-link hover-action">
+                  <img class="works-image lazyload fadein" src="../static/img/placeholder4x3.png" data-src="img/works/school.jpg"
+                       alt="" />
+                </a>
+                <figcaption class="works-body">
+                  <div class="works-title">サイト名が入る</div>
+                  <div class="works-text">Design</div>
+                </figcaption>
+              </figure>
+              <figure class="works-item">
+                <a href="../static/img/works/game.jpg" data-size="960x720" class="works-image-wrapper works-link hover-action">
+                  <img class="works-image lazyload fadein" src="../static/img/placeholder4x3.png" data-src="img/works/game.jpg"
+                       alt="" />
+                </a>
+                <figcaption class="works-body">
+                  <div class="works-title">サイト名が入る</div>
+                  <div class="works-text">Design</div>
+                </figcaption>
+              </figure>
+              <figure class="works-item">
+                <a href="../static/img/works/fashion.jpg" data-size="960x720" class="works-image-wrapper works-link hover-action">
+                  <img class="works-image lazyload fadein" src="../static/img/placeholder4x3.png" data-src="img/works/fashion.jpg"
+                       alt="" />
+                </a>
+                <figcaption class="works-body">
+                  <div class="works-title">サイト名が入る</div>
+                  <div class="works-text">Design</div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+      <!-- /.works-section -->
+
+      <!-- .feature-section -->
+        <!--
+      <section class="feature-section section" id="feature-section">
+        <div class="inner">
+          <div class="section-heading">
+            <h2 class="heading-primary">FEATURE</h2>
+          </div>
+          <div class="section-lead">
+            <p>
+              １サイトの解説
+            </p>
+          </div>
+          <div class="section-body feature">
+            <div class="feature-item">
+              <div class="feature-image-wrapper">
+                <a href="https://www.yahoo.co.jp/" target="_blank" class="hover-action"><img clas="feature-image"
+                                                                                             src="../static/img/feature/feature.jpg" alt=""></a>
+              </div>
+              <div class="feature-body">
+                <p>
+                  <span class="text-bold">サイト名：</span><br>サイト名が入る<br><a href="#" target="_blank">https://●●●.com</a></p>
+                <p><span class="text-bold">担当：</span><br>Design / Coding (Responsive) / WordPress / Writing</p>
+                <p><span
+                    class="text-bold">コメント：</span><br>テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <p>
+                  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+      <!-- /.feature-section -->
+
+      <!-- .about-section -->
+      <section class="about-section section" id="about-section">
+        <div class="inner">
+          <div class="section-heading">
+            <h1 class="heading-primary">高島 空良</h1>
+          </div>
+          <div class="section-lead">
+            <p>
+              東京工業大学 学士4年<br>
+                情報理工学院 情報工学系
+            </p>
+            <div class="section-body contact">
+                <ul class="contact-list">
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://twitter.com/soraemonpockts" target="_blank"><img class="contact-image"
+                                                                                             src="../static/img/contact/icon_tw.png" alt=""></a>
+                  </li>
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://www.facebook.com/soraemonpockt/" target="_blank"><img class="contact-image"
+                                                                                                  src="../static/img/contact/icon_fb.png" alt=""></a>
+                  </li>
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://github.com/masora1030" target="_blank"><img class="contact-image"
+                                                                                                  src="../static/img/contact/icon_gh.png" alt=""></a>
+                  </li>
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://soraemonpockt.hateblo.jp" target="_blank"><img class="contact-image"
+                                                                                                  src="../static/img/contact/icon_hb.png" alt=""></a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+          <div class="section-body about">
+            <div class="about-item">
+              <div class="about-image-wrapper">
+                <img class="about-image lazyload fadein" data-src="../static/img/about/profile.jpg" alt="">
+              </div>
+              <div class="about-body">
+                <p>
+                  こんにちは！<br>
+                  横田理央研究室学士4年の高島と申します. 現在は研究見習いとして機械学習の特に深層学習や統計周りについて知見を蓄えている段階です.<br>
+                  将来的には, 理論的な考察に基づいた深層学習過程の高速化やモデルの性能予測について研究してみたいと考えております.<br>
+                </p>
+                <p>
+                  最近趣味で競技プログラミング(AtCoder)をちょっとずつやっています. まだまだ緑の若輩者ですが水色, 青色を目指して†精進†したいです. <br>
+                    <a href="https://atcoder.jp/users/Skygood" target="_blank">My AtCoder Profile</a>
+                </p>
+                  <p>
+                      <a href="../static/img/resume2020forself.pdf" target="_blank">resume</a>
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.about-section -->
+
+    <!-- .education-section -->
+     <section class="education-section section" id="education-section">
+         <div class="inner">
+            <div class="section-heading">
+                <h2 class="heading-primary">EDUCATION</h2>
+            </div>
+             <div class="section-lead">
+                 <p>
+                     いわゆる学歴です
+                 </p>
+             </div>
+             <div class="section-body education">
+                 <div class="education-list">
+                     <div class="education-item">
+                         <div class="education-image-wrapper">
+                            <img class="education-image" src="../static/img/education/icon_musashi.jpg" alt="">
+                        </div>
+                        <div class="education-body">
+                            <h3 class="education-title">2011 - 2017    : <a href="https://www.musashi.ed.jp" target="_blank">私立武蔵高等学校(中学校)</a></h3>
+                            <p>
+                                部活動/サークル：陸上部, CPU愛好会
+                            </p>
+                        </div>
+                     </div>
+                     <div class="education-item">
+                         <div class="education-image-wrapper">
+                            <img class="education-image" src="../static/img/education/icon_tech.jpg" alt="">
+                        </div>
+                        <div class="education-body">
+                            <h3 class="education-title">2017 - now    : <a href="https://www.titech.ac.jp" target="_blank">東京工業大学</a></h3>
+                            <p>
+                                部活動/サークル：<a href="https://www.t-scitech.net" target="_blank">東工大ScienceTechno</a>, 茶道部
+                            </p>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+    <!-- /.education-section -->
+
+    <!-- .experience-section -->
+     <section class="experience-section section" id="experience-section">
+         <div class="inner">
+            <div class="section-heading">
+                <h2 class="heading-primary">EXPERIENCE</h2>
+            </div>
+             <div class="section-lead">
+                 <p>
+                     インターンなど社会経験です
+                 </p>
+             </div>
+             <div class="section-body experience">
+                 <div class="experience-list">
+                     <div class="experience-item">
+                         <div class="experience-image-wrapper">
+                            <img class="experience-image" src="../static/img/experience/icon_teamlab.png" alt="">
+                        </div>
+                        <div class="experience-body">
+                            <h3 class="experience-title">2019    summer    : TeamLab summer intern</h3>
+                            <p>
+                                とあるアプリケーションに使用するApache Solrを用いた検索システムの調査をしました. デモアプリを作るためにフロントとサーバーサイド両方に携わり, チケット駆動開発しました.
+                            </p>
+                        </div>
+                     </div>
+                     <div class="experience-item">
+                         <div class="experience-image-wrapper">
+                            <img class="experience-image" src="../static/img/experience/icon_ibm.jpg" alt="">
+                        </div>
+                        <div class="experience-body">
+                            <h3 class="experience-title">2019    summer    : IBM summer intern (IT specialist)</h3>
+                            <p>
+                                顧客調査からソリューション提案, Webアプリケーション実装, プレゼンを1weekで一通りしました. 自分は6人チームのスクラム開発でDeveloperポジションとして, アプリ機能の提案やUIの作成, 機能の実装をしました.
+                            </p>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+    <!-- /.experience-section -->
+
+    <!-- .research-section -->
+     <section class="research-section section" id="research-section">
+         <div class="inner">
+            <div class="section-heading">
+                <h2 class="heading-primary">RESEARCH</h2>
+            </div>
+             <div class="section-lead">
+                 <p>
+                     研究について. 何かしら成果があったらここに書きます.
+                 </p>
+             </div>
+             <div class="section-body research">
+                 <!--
+                 <div class="research-list">
+                     <div class="research-item">
+                         <div class="research-image-wrapper">
+                            <img class="research-image" src="../static/img/experience/icon_teamlab.png" alt="">
+                        </div>
+                        <div class="research-body">
+                            <h3 class="research-title">2019    summer    : TeamLab summer intern</h3>
+                            <p>
+                                とあるアプリケーションに使用するApache Solrを用いた検索システムの調査をしました. デモアプリを作るためにフロントとサーバーサイド両方に携わり, チケット駆動開発しました.
+                            </p>
+                        </div>
+                     </div>
+                 </div>
+                  -->
+             </div>
+         </div>
+     </section>
+    <!-- /.research-section -->
+
+
+      <!-- .skill-section -->
+        <!--
+      <section class="skill-section section" id="skill-section">
+        <div class="inner">
+          <div class="section-heading">
+            <h2 class="heading-primary">SKILL</h2>
+          </div>
+          <div class="section-lead">
+            <p>
+              未経験ですが頑張ります！
+            </p>
+          </div>
+          <div class="section-body skill">
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-image-wrapper">
+                  <img class="skill-image" src="../static/img/skill/icon_skill.png" alt="">
+                </div>
+                <div class="skill-body">
+                  <h3 class="skill-title">HTML5/CSS3</h3>
+                  <div class="skill-rating rating">
+                    <div class="rate rate4"></div>
+                  </div>
+                  <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-image-wrapper">
+                  <img class="skill-image" src="../static/img/skill/icon_skill.png" alt="">
+                </div>
+                <div class="skill-body">
+                  <h3 class="skill-title">JavaScript</h3>
+                  <div class="skill-rating rating">
+                    <div class="rate rate3"></div>
+                  </div>
+                  <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-image-wrapper">
+                  <img class="skill-image" src="../static/img/skill/icon_skill.png" alt="">
+                </div>
+                <div class="skill-body">
+                  <h3 class="skill-title">WordPress</h3>
+                  <div class="skill-rating rating">
+                    <div class="rate rate4"></div>
+                  </div>
+                  <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-image-wrapper">
+                  <img class="skill-image" src="../static/img/skill/icon_skill.png" alt="">
+                </div>
+                <div class="skill-body">
+                  <h3 class="skill-title">Photoshop</h3>
+                  <div class="skill-rating rating">
+                    <div class="rate rate4"></div>
+                  </div>
+                  <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-image-wrapper">
+                  <img class="skill-image" src="../static/img/skill/icon_skill.png" alt="">
+                </div>
+                <div class="skill-body">
+                  <h3 class="skill-title">Illustrator</h3>
+                  <div class="skill-rating rating">
+                    <div class="rate rate3"></div>
+                  </div>
+                  <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-image-wrapper">
+                  <img class="skill-image" src="../static/img/skill/icon_skill.png" alt="">
+                </div>
+                <div class="skill-body">
+                  <h3 class="skill-title">XD</h3>
+                  <div class="skill-rating rating">
+                    <div class="rate rate3"></div>
+                  </div>
+                  <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+      <!-- /.skill-section -->
+
+      <!-- .contact-section -->
+      <section class="contact-section section" id="contact-section">
+        <div class="inner">
+          <div class="section-heading">
+            <h2 class="heading-primary">CONTACT</h2>
+          </div>
+          <div class="section-lead">
+            <p>
+              お問い合わせは、<br class="sp-only">SNSかメールでお願いいたします.
+            </p>
+          </div>
+          <div class="section-body contact">
+                <ul class="contact-list">
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://twitter.com/soraemonpockts" target="_blank"><img class="contact-image"
+                                                                                             src="../static/img/contact/icon_tw.png" alt=""></a>
+                  </li>
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://www.facebook.com/soraemonpockt/" target="_blank"><img class="contact-image"
+                                                                                                  src="../static/img/contact/icon_fb.png" alt=""></a>
+                  </li>
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://github.com/masora1030" target="_blank"><img class="contact-image"
+                                                                                                  src="../static/img/contact/icon_gh.png" alt=""></a>
+                  </li>
+                  <li class="contact-item">
+                    <a class="contact-link" href="https://soraemonpockt.hateblo.jp" target="_blank"><img class="contact-image"
+                                                                                                  src="../static/img/contact/icon_hb.png" alt=""></a>
+                  </li>
+                </ul>
+            <div class="contact-text">soraemonpockt@gmail.com</div>
+          </div>
+        </div>
+      </section>
+      <!-- /.contact-section -->
+
+    </main>
+
+    <!-- .footer -->
+    <footer class="footer">
+      <div class="page-top" id="js-page-top">
+        トップへもどる
+      </div>
+      <div class="inner">
+        <div class="copyright">Copyright&copy;SORA TAKASHIMA. All Rights Reserved.</div>
+      </div>
+    </footer>
+    <!-- /.footer -->
+
+  </div>
+
+  <!-- 下記はPhotoswipeプラグイン用 -->
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+       It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+          PhotoSwipe keeps only 3 of them in the DOM to save memory.
+          Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type='text/javascript' src="../static/js/photoswipe/photoswipe.min.js"></script>
+  <script type='text/javascript' src="../static/js/photoswipe/photoswipe-ui-default.js"></script>
+  <script type='text/javascript' src="../static/js/photoswipe/photoswipe-setup.js"></script>
+  <script type='text/javascript' src="../static/js/lazysizes/lazysizes.min.js"></script>
+  <script type='text/javascript' src="../static/js/script.js"></script>
+
+</body>
+</html>
