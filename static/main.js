@@ -335,10 +335,6 @@ class Player {
 
 let WIDTH = 1400; // 画面の幅
 let HEIGHT = 700; // 画面の高さ
-if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
-	WIDTH = document.documentElement.clientWidth;
-	HEIGHT = 300;
-}
 
 var key = Array(5);
 let KEY_RIGHT	= 0;
@@ -372,10 +368,6 @@ var context; // Context
 canvas = document.getElementById("canvas"); // Canvasを取得
 canvas.width  = 1400;
 canvas.height = 700;
-if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
-	canvas.width = document.documentElement.clientWidth;
-	canvas.height = 300;
-}
 context = canvas.getContext("2d"); // CanvasからContextを取得
 
 var score = 0; // スコア

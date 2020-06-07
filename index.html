@@ -36,14 +36,24 @@
     <!-- /.gnav -->
 
     <!-- .header -->
-    <header class="header">
-      <canvas id="canvas"></canvas>
-      <script src="static/main.js"></script>
-    </header>
-    <div class="bottons">
-        <button class="bottone" name="button01" type="button" onclick="gameStart();">Game<br>Start</button>
-        <button class="bottone" name="button02" type="button" onclick="gameEnd();">Game<br>Reset</button>
-    </div>
+    <SCRIPT LANGUAGE="JavaScript">
+        if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+            document.write("<header class=\"header\">");
+            document.write("</header>");
+            document.write("<div>");
+            document.write("<p>PCで開くとミニゲームが遊べます。</p>");
+            document.write("</div>");
+        } else {
+            document.write("<header class=\"header\">");
+            document.write("<canvas id=\"canvas\"></canvas>");
+            document.write("</header>");
+            document.write("<div class=\"bottons\">");
+            document.write("<button class=\"bottone\" name=\"button01\" type=\"button\" onclick=\"gameStart();\">Game<br>Start</button>");
+            document.write("<button class=\"bottone\" name=\"button02\" type=\"button\" onclick=\"gameEnd();\">Game<br>Reset</button>");
+            document.write("</div>");
+        }
+    </SCRIPT>
+    <script src="static/main.js"></script>
     <!-- /.header -->
 
     <main class="content">
