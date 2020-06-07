@@ -102,7 +102,7 @@ class BossEnemy {
 		this.cnt = 0; // カウン
 		this.hp = 30; // 体力
 		this.img = new Image();
-		this.img.src = '../static/img/self.png';
+		this.img.src = 'static/img/self.png';
 	}
 
 	getBulletNum() { // 発射されていない弾を検索
@@ -411,7 +411,7 @@ function gamePause() {
 
 function bossStart() {
 	bossstart = true;
-	boss.img.src = '../static/img/selfboss.png';
+	boss.img.src = 'static/img/selfboss.png';
 	var startMsec = new Date();
   	while (new Date() - startMsec < 1000);
 	// bossの動き始める動きを
@@ -683,6 +683,7 @@ document.addEventListener("keydown", e => {
 		case 13:
 			//	ゲームオーバー後にEnterが押されたら
 			if(gameover || gameclear) {
+				gamestart = false;
 				gameover = false; // ゲームオーバーを解
 				bossstart = false; // boss出現
 				gameclear = false;
@@ -701,7 +702,6 @@ document.addEventListener("keydown", e => {
 					enemy[i] = new Enemy(WIDTH * (i - 1) / 15, HEIGHT / 4 + 50, Math.PI * 5 / 6 - Math.PI * 2 / 3 * i / 8, kind[i]);
 				}
 				boss  = new BossEnemy(WIDTH/2,HEIGHT/2);
-				gamestart = false;
 			}
 			break;
 	}
