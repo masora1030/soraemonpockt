@@ -744,18 +744,18 @@ function main() {
 			//	GAME OVERと表示する
 			context.font = "bold 60px sans-serif";
 			context.fillStyle = "rgb(255, 100, 100)";
-			context.fillText("GAME OVER...", WIDTH / 4, HEIGHT / 3 + 100);
+			context.fillText("GAME OVER...", WIDTH / 4, HEIGHT / 3 + 50);
 			context.fillStyle = "rgb(0, 0, 0)";
-			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 100);
+			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 50);
 
 			//	Press Enter to Continueと表示する
 			context.fillStyle = "rgb(255, 100, 100)";
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgba(255, 100, 100, " + (Math.sin(Math.PI * 2 * cnt / 200)) + ")";
-			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 100);
+			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 50);
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgb(0, 172, 237)";
-			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 200);
+			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 150);
 
 			//	カウンタを更新
 			cnt++;
@@ -772,18 +772,18 @@ function main() {
 			//	GAME CLEARと表示する
 			context.font = "bold 60px sans-serif";
 			context.fillStyle = "rgb(220, 220, 50)";
-			context.fillText(mode + " GAME CLEAR!!!", WIDTH / 4, HEIGHT / 3 + 100);
+			context.fillText(mode + " GAME CLEAR!!!", WIDTH / 4, HEIGHT / 3 + 50);
 			context.fillStyle = "rgb(0, 0, 0)";
-			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 100);
+			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 50);
 
 			//	Press Enter to Continueと表示する
 			context.fillStyle = "rgb(220, 220, 50)";
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgba(220, 220, 50, " + (Math.sin(Math.PI * 2 * cnt / 200)) + ")";
-			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 100);
+			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 50);
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgb(0, 172, 237)";
-			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 200);
+			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 150);
 
 
 			//	カウンタを更新
@@ -795,10 +795,10 @@ function main() {
 		if (!gameclear && !gameover && gamestart) {
 			context.font = "bold 50px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.2)";
-			context.fillText("SHOT  : [Z]    MOVE  : ARROW KEYS", WIDTH / 4, HEIGHT * 2 / 3);
-			context.fillText("PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6);
+			context.fillText("SHOT  : [Z]    MOVE  : ARROW KEYS", WIDTH / 4, HEIGHT * 2 / 3-50);
+			context.fillText("PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6-50);
 			context.font = "bold 40px sans-serif";
-			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12);
+			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12-50);
 		}
 	} else {
 		for (var i = 0; i < ENEMY_NUM; i++) {
@@ -815,17 +815,17 @@ function main() {
 		if (hardmode) {
 			context.font = "bold 20px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.7)";
-			context.fillText("EASY : [E]", WIDTH * 3 / 8, HEIGHT * 23 / 24);
+			context.fillText("EASY : [E]", WIDTH * 3 / 8, HEIGHT * 23 / 24-50);
 			context.font = "bold 25px sans-serif";
 			context.fillStyle = "rgb(255, 20, 20)";
-			context.fillText("HARD : [H]", WIDTH * 5 / 8 - 100, HEIGHT * 23 / 24);
+			context.fillText("HARD : [H]", WIDTH * 5 / 8 - 100, HEIGHT * 23 / 24-50);
 		} else {
 			context.font = "bold 25px sans-serif";
 			context.fillStyle = "rgb(20, 200, 200)";
-			context.fillText("EASY : [E]", WIDTH * 3 / 8, HEIGHT * 23 / 24);
+			context.fillText("EASY : [E]", WIDTH * 3 / 8, HEIGHT * 23 / 24-50);
 			context.font = "bold 20px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.7)";
-			context.fillText("HARD : [H]", WIDTH * 5 / 8 - 100, HEIGHT * 23 / 24);
+			context.fillText("HARD : [H]", WIDTH * 5 / 8 - 100, HEIGHT * 23 / 24-50);
 		}
 		if (!gameclear && !gameover && pauseflag) {
 			player.draw(context); // プレイヤーを描画
@@ -836,9 +836,9 @@ function main() {
 			}
 			context.font = "bold 50px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.2)";
-			context.fillText("RESET PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6);
+			context.fillText("RESET PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6-50);
 			context.font = "bold 40px sans-serif";
-			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12);
+			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12-50);
 		}
 	}
 
