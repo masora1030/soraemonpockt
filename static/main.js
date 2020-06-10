@@ -186,6 +186,95 @@ class BossEnemy {
 
 
 
+class BossEnemySub {
+	constructor(boss, no) {
+		this.BULLET_NUM = 5; // 敵の最大弾数
+		this.bullet = Array(this.BULLET_NUM); // 弾の変数
+		for(var i = 0;i < 5;i++) {
+			this.bullet[i] = new Bullet();
+		}
+		this.x = boss.x + 200*Math.cos((no*72)*Math.PI/180); // X座標
+		this.y = boss.y + 200*Math.sin((no*72)*Math.PI/180); // Y座標
+		this.width = 30; // 幅
+		this.height = 30; // 高さ
+		this.angle = Math.PI*Math.random(); // 角度
+		this.spd = 1; // 速度
+		this.cnt = 0; // カウン
+		this.hp = 10; // 体力
+		this.img = new Image();
+		this.img.src = 'static/img/self.png';
+		this.die = true;
+	}
+
+	rotate(cx, cy, x, y, angle) {
+		var radians = (Math.PI / 180) * angle;
+		var cos = Math.cos(radians);
+		var sin = Math.sin(radians);
+		var nx = (cos * (x - cx)) + (sin * (y - cy)) + cx;
+		var ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
+		return [nx, ny];
+	}
+
+	getBulletNum() { // 発射されていない弾を検索
+		for(var i = 0;i < this.BULLET_NUM;i++) {
+			if(!this.bullet[i].exist) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	shot() {
+		if(this.cnt % 30 == 0) { // 30カウントずつ発射
+			var num = this.getBulletNum(); // 発射されてない弾の番号を取得
+			if(num != -1) {
+				//	弾を登録
+				this.bullet[num].enter(this.x, this.y, 6, 6, this.angle+2*Math.PI*this.cnt/200, 4);
+			}
+		}
+		//	発射された弾を更新
+		for(var i = 0;i < this.BULLET_NUM;i++) {
+			if(this.bullet[i].exist) {
+				this.bullet[i].move();
+			}
+		}
+		//	カウンタを更新
+		this.cnt++;
+	}
+
+	move() {
+		this.angle+=Math.PI/90
+		this.angle+=Math.PI/90
+		//	X・Y座標を更新
+		var tmp = this.rotate(boss.x, boss.y, this.x, this.y, 1)
+		this.x = tmp[0];
+		this.y = tmp[1];
+	}
+
+	draw(context) {
+		//	敵を描画
+		context.drawImage(this.img,this.x-this.width/2,this.y-this.height/2,this.width,this.width);
+		if (bossstart) {
+			context.font = "bold 15px sans-serif";
+			if (this.hp >= 3) {
+				context.fillStyle = "rgb(0, 220, 50)";
+			} else {
+				context.fillStyle = "rgb(200, 0, 50)";
+			}
+			context.fillText("HP : " + String(this.hp), this.x-this.width/2+10, this.y-20);
+		}
+
+		//	敵の弾を描画
+		for(var i = 0;i < this.BULLET_NUM;i++) {
+			if(this.bullet[i].exist) {
+				this.bullet[i].draw(context);
+			}
+		}
+	}
+}
+
+
+
 
 
 class Bullet {
@@ -351,6 +440,7 @@ key[KEY_Z]		= 0;
 var player = new Player(); // Playerクラスのインスタンス
 let ENEMY_NUM = 13; // 敵の数
 var enemy = Array(ENEMY_NUM); // Enemyクラスのインスタンス（配列）
+var bosssub = Array(5); // BossEnemySubクラスのインスタンス（配列）
 var boss  = new BossEnemy(WIDTH/2,HEIGHT/2);
 var kind = [0, 1, 2, 1, 3, 4, 5, 6, 1, 7 ,8, 9, 1]; // 敵の種類を設定
 
@@ -360,6 +450,10 @@ for(var i = 0;i < 9;i++) {
 }
 for (var i = 9;i < 13;i++) {
 	enemy[i] = new Enemy(WIDTH * (i - 1) / 15, HEIGHT / 4 + 50, Math.PI * 5 / 6 - Math.PI * 2 / 3 * i / 8, kind[i]);
+}
+
+for (var i = 0;i < 5;i++) {
+	 bosssub[i] = new BossEnemySub(boss, i)
 }
 
 var canvas; // Canvas
@@ -401,6 +495,9 @@ function gameEnd() {
 		enemy[i] = new Enemy(WIDTH * (i - 1) / 15, HEIGHT / 4 + 50, Math.PI * 5 / 6 - Math.PI * 2 / 3 * i / 8, kind[i]);
 	}
 	boss  = new BossEnemy(WIDTH/2,HEIGHT/2);
+	for (var i = 0;i < 5;i++) {
+		 bosssub[i] = new BossEnemySub(boss, i)
+	}
 	gamestart = false;
 }
 
@@ -412,6 +509,9 @@ function gamePause() {
 function bossStart() {
 	bossstart = true;
 	boss.img.src = 'static/img/selfboss.png';
+	for (var i = 0;i < 5;i++) {
+		 bosssub[i].draw(context)
+	}
 	var startMsec = new Date();
   	while (new Date() - startMsec < 1000);
 	// bossの動き始める動きを
@@ -446,6 +546,13 @@ function main() {
 		}
 
 		if (bossstart && !gameclear) {
+			for (var i = 0;i < 5;i++) {
+				if (bosssub[i].die) {
+					bosssub[i].shot();
+					bosssub[i].move();
+					bosssub[i].draw(context);
+				}
+			}
 			boss.shot(); // bossのショット
 			boss.move(); // bossを移動
 		}
@@ -469,6 +576,16 @@ function main() {
 					player.cnt = 0; // プレイヤーのカウンタをリセット
 					player.residue--; // プレイヤーの残基を減らす
 					player.deffect = true; // ダメージエフェクトを開始する
+				}
+				for (var i = 0;i < 5;i++) {
+					if (bosssub[i].die) {
+						if (!player.deffect && Math.abs(player.x - bosssub[i].x) < (player.width + bosssub[i].width) / 2 &&
+							Math.abs(player.y - bosssub[i].y) < (player.height + bosssub[i].height) / 2) {
+							player.cnt = 0; // プレイヤーのカウンタをリセット
+							player.residue--; // プレイヤーの残基を減らす
+							player.deffect = true; // ダメージエフェクトを開始する
+						}
+					}
 				}
 			}
 
@@ -495,6 +612,20 @@ function main() {
 							player.cnt = 0; // プレイヤーのカウンタをリセット
 							player.residue--; // プレイヤーの残基を減らす
 							player.deffect = true; // ダメージエフェクトを開始する
+						}
+					}
+				}
+				for (var i = 0;i < 5;i++) {
+					if (bosssub[i].die) {
+						for (var j = 0; j < bosssub[i].BULLET_NUM; j++) {
+							if (bosssub[i].bullet[j].exist) {
+								if (!player.deffect && Math.abs(player.x - bosssub[i].bullet[j].x) < (player.width + bosssub[i].bullet[j].width) / 2 &&
+									Math.abs(player.y - bosssub[i].bullet[j].y) < (player.height + bosssub[i].bullet[j].height) / 2) {
+									player.cnt = 0; // プレイヤーのカウンタをリセット
+									player.residue--; // プレイヤーの残基を減らす
+									player.deffect = true; // ダメージエフェクトを開始する
+								}
+							}
 						}
 					}
 				}
@@ -553,6 +684,20 @@ function main() {
 								boss.hp -= 1;
 							} else {
 								score += 10000;
+							}
+						}
+						for (var i = 0;i < 5;i++) {
+							if (bosssub[i].die) {
+								if (Math.abs(player.bullet[i].x - bosssub[i].x) < (player.bullet[i].width + bosssub[i].width) / 2 &&
+									Math.abs(player.bullet[i].y - bosssub[i].y) < (player.bullet[i].height + bosssub[i].height) / 2) {
+									player.bullet[i].exist = false; // プレイヤーの弾を消す
+									if (bosssub[i].hp > 0) {
+										bosssub[i].hp -= 1;
+									} else {
+										bosssub[i].die = false;
+										score += 1000;
+									}
+								}
 							}
 						}
 					}
@@ -651,6 +796,13 @@ function main() {
 			enemy[i].draw(context); // 敵を描画
 		}
 		boss.draw(context); // bossを描画
+		if (bossstart) {
+			for (var i=0; i < 5; i++) {
+				if (bosssub[i].die) {
+					bosssub[i].draw(context)
+				}
+			}
+		}
 		if (!gameclear && !gameover && pauseflag) {
 			player.draw(context); // プレイヤーを描画
 			//	残基の表示
@@ -702,6 +854,9 @@ document.addEventListener("keydown", e => {
 					enemy[i] = new Enemy(WIDTH * (i - 1) / 15, HEIGHT / 4 + 50, Math.PI * 5 / 6 - Math.PI * 2 / 3 * i / 8, kind[i]);
 				}
 				boss  = new BossEnemy(WIDTH/2,HEIGHT/2);
+				for (var i = 0;i < 5;i++) {
+					 bosssub[i] = new BossEnemySub(boss, i)
+				}
 			}
 			break;
 	}
