@@ -25,7 +25,7 @@ class Enemy {
 	}
 
 	shot() {
-		if(this.cnt % 20 == 0) { // 20カウントずつ発射
+		if(this.cnt % 30 == 0) { // 30カウントずつ発射
 			var num = this.getBulletNum(); // 発射されてない弾の番号を取得
 			if(num != -1) {
 				//	弾を登録
@@ -143,8 +143,6 @@ class BossEnemy {
 	}
 
 	move() {
-		this.angle+=Math.PI/1000
-		this.angle+=Math.PI/1000
 		//	X・Y座標を更新
 		this.x += Math.cos(this.angle) * this.spd;
 		this.y += Math.sin(this.angle) * this.spd;
@@ -193,26 +191,17 @@ class BossEnemySub {
 		for(var i = 0;i < 5;i++) {
 			this.bullet[i] = new Bullet();
 		}
-		this.x = boss.x + 200*Math.cos((no*72)*Math.PI/180); // X座標
-		this.y = boss.y + 200*Math.sin((no*72)*Math.PI/180); // Y座標
-		this.width = 30; // 幅
-		this.height = 30; // 高さ
-		this.angle = Math.PI*Math.random(); // 角度
+		this.x = boss.x + 120*Math.cos((no*72)*Math.PI/180); // X座標
+		this.y = boss.y + 120*Math.sin((no*72)*Math.PI/180); // Y座標
+		this.width = 70; // 幅
+		this.height = 70; // 高さ
+		this.angle = (no*72)*Math.PI/180; // 角度
 		this.spd = 1; // 速度
 		this.cnt = 0; // カウン
 		this.hp = 10; // 体力
 		this.img = new Image();
 		this.img.src = 'static/img/self.png';
-		this.die = true;
-	}
-
-	rotate(cx, cy, x, y, angle) {
-		var radians = (Math.PI / 180) * angle;
-		var cos = Math.cos(radians);
-		var sin = Math.sin(radians);
-		var nx = (cos * (x - cx)) + (sin * (y - cy)) + cx;
-		var ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
-		return [nx, ny];
+		this.die = false;
 	}
 
 	getBulletNum() { // 発射されていない弾を検索
@@ -225,7 +214,7 @@ class BossEnemySub {
 	}
 
 	shot() {
-		if(this.cnt % 30 == 0) { // 30カウントずつ発射
+		if(this.cnt % 50 == 0) { // 50カウントずつ発射
 			var num = this.getBulletNum(); // 発射されてない弾の番号を取得
 			if(num != -1) {
 				//	弾を登録
@@ -243,12 +232,10 @@ class BossEnemySub {
 	}
 
 	move() {
-		this.angle+=Math.PI/90
-		this.angle+=Math.PI/90
+		this.angle+=Math.PI/180
 		//	X・Y座標を更新
-		var tmp = this.rotate(boss.x, boss.y, this.x, this.y, 1)
-		this.x = tmp[0];
-		this.y = tmp[1];
+		this.x = boss.x + 200*Math.cos(this.angle); // X座標
+		this.y = boss.y + 200*Math.sin(this.angle); // X座標
 	}
 
 	draw(context) {
@@ -261,7 +248,7 @@ class BossEnemySub {
 			} else {
 				context.fillStyle = "rgb(200, 0, 50)";
 			}
-			context.fillText("HP : " + String(this.hp), this.x-this.width/2+10, this.y-20);
+			context.fillText("HP : " + String(this.hp), this.x-this.width/2+10, this.y-40);
 		}
 
 		//	敵の弾を描画
@@ -470,6 +457,7 @@ var gameover = false; // ゲームオーバーフラグ
 var bossstart = false; // boss出現
 var gameclear = false;
 var pauseflag = false;
+var hardmode = false;
 var cnt = 0;
 
 function gameStart() {
@@ -481,6 +469,7 @@ function gameEnd() {
 	bossstart = false; // boss出現
 	gameclear = false;
 	pauseflag = false;
+	hardmode = false;
 	player.residue = 5; // 残基をリセット
 	player.deffect = false; // ダメージエフェクトを解除
 	player.x = WIDTH / 2; // X座標をリセット
@@ -509,8 +498,10 @@ function gamePause() {
 function bossStart() {
 	bossstart = true;
 	boss.img.src = 'static/img/selfboss.png';
-	for (var i = 0;i < 5;i++) {
-		 bosssub[i].draw(context)
+	if (hardmode) {
+		for (var i = 0; i < 5; i++) {
+			bosssub[i].draw(context)
+		}
 	}
 	var startMsec = new Date();
   	while (new Date() - startMsec < 1000);
@@ -682,20 +673,27 @@ function main() {
 							player.bullet[i].exist = false; // プレイヤーの弾を消す
 							if (boss.hp > 0) {
 								boss.hp -= 1;
-							} else {
-								score += 10000;
+								if (boss.hp == 0) {
+									if (hardmode) {
+										score += 10000;
+									} else {
+										score += 5000;
+									}
+								}
 							}
 						}
-						for (var i = 0;i < 5;i++) {
-							if (bosssub[i].die) {
-								if (Math.abs(player.bullet[i].x - bosssub[i].x) < (player.bullet[i].width + bosssub[i].width) / 2 &&
-									Math.abs(player.bullet[i].y - bosssub[i].y) < (player.bullet[i].height + bosssub[i].height) / 2) {
+						for (var j = 0;j < 5;j++) {
+							if (bosssub[j].die) {
+								if (Math.abs(player.bullet[i].x - bosssub[j].x) < (player.bullet[i].width + bosssub[j].width) / 2 &&
+									Math.abs(player.bullet[i].y - bosssub[j].y) < (player.bullet[i].height + bosssub[j].height) / 2) {
 									player.bullet[i].exist = false; // プレイヤーの弾を消す
-									if (bosssub[i].hp > 0) {
-										bosssub[i].hp -= 1;
+									if (bosssub[j].hp > 0) {
+										bosssub[j].hp -= 1;
+										if (boss.hp == 0) {
+											score += 1000;
+										}
 									} else {
-										bosssub[i].die = false;
-										score += 1000;
+										bosssub[j].die = false;
 									}
 								}
 							}
@@ -755,6 +753,9 @@ function main() {
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgba(255, 100, 100, " + (Math.sin(Math.PI * 2 * cnt / 200)) + ")";
 			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 100);
+			context.font = "bold 40px sans-serif";
+			context.fillStyle = "rgb(0, 172, 237)";
+			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 200);
 
 			//	カウンタを更新
 			cnt++;
@@ -764,10 +765,14 @@ function main() {
 
 		//  ゲームクリアの内容
 		if (gameclear) {
+			var mode = "EASY"
+			if (hardmode) {
+				mode = "HARD"
+			}
 			//	GAME CLEARと表示する
 			context.font = "bold 60px sans-serif";
 			context.fillStyle = "rgb(220, 220, 50)";
-			context.fillText("GAME CLEAR!!!", WIDTH / 4, HEIGHT / 3 + 100);
+			context.fillText(mode + " GAME CLEAR!!!", WIDTH / 4, HEIGHT / 3 + 100);
 			context.fillStyle = "rgb(0, 0, 0)";
 			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 100);
 
@@ -776,6 +781,10 @@ function main() {
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgba(220, 220, 50, " + (Math.sin(Math.PI * 2 * cnt / 200)) + ")";
 			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 100);
+			context.font = "bold 40px sans-serif";
+			context.fillStyle = "rgb(0, 172, 237)";
+			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 200);
+
 
 			//	カウンタを更新
 			cnt++;
@@ -803,6 +812,21 @@ function main() {
 				}
 			}
 		}
+		if (hardmode) {
+			context.font = "bold 20px sans-serif";
+			context.fillStyle = "rgba(100, 100, 100, 0.7)";
+			context.fillText("EASY : [E]", WIDTH * 3 / 8, HEIGHT * 23 / 24);
+			context.font = "bold 25px sans-serif";
+			context.fillStyle = "rgb(255, 20, 20)";
+			context.fillText("HARD : [H]", WIDTH * 5 / 8 - 100, HEIGHT * 23 / 24);
+		} else {
+			context.font = "bold 25px sans-serif";
+			context.fillStyle = "rgb(20, 200, 200)";
+			context.fillText("EASY : [E]", WIDTH * 3 / 8, HEIGHT * 23 / 24);
+			context.font = "bold 20px sans-serif";
+			context.fillStyle = "rgba(100, 100, 100, 0.7)";
+			context.fillText("HARD : [H]", WIDTH * 5 / 8 - 100, HEIGHT * 23 / 24);
+		}
 		if (!gameclear && !gameover && pauseflag) {
 			player.draw(context); // プレイヤーを描画
 			//	残基の表示
@@ -812,7 +836,7 @@ function main() {
 			}
 			context.font = "bold 50px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.2)";
-			context.fillText("RESET PAUSE : PRESS [X]", WIDTH / 4, HEIGHT * 5 / 6);
+			context.fillText("RESET PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6);
 			context.font = "bold 40px sans-serif";
 			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12);
 		}
@@ -832,6 +856,50 @@ document.addEventListener("keydown", e => {
 		case 40: key[KEY_DOWN]	= 1; break;
 		case 90: key[KEY_Z]++;		 break;
 		case 88: if (gamestart || pauseflag) {gamePause();} break;
+		case 69:
+			if (!gamestart && !pauseflag) {
+				hardmode = false;
+				for (var i=0;i<5;i++) {
+					bosssub[i].die = false;
+				}
+			}
+			break;
+		case 72:
+			if (!gamestart && !pauseflag) {
+				hardmode = true;
+				for (var i=0;i<5;i++) {
+					bosssub[i].die = true;
+				}
+			}
+			break;
+		case 83:
+			if (!gamestart && !pauseflag) {
+				gameStart();
+			}
+			break;
+		case 82:
+			if (!gamestart && !pauseflag) {
+				gameEnd();
+			}
+			break;
+		case 84:
+			if (gameclear) {
+				var mode = "EASY"
+				if (hardmode) {
+					mode = "HARD"
+				}
+  				var twitter_url = ("私はこのポートフォリオのゲーム[" + mode + "]で " + String(score) + " 点を取得し、見事クリアしました😂\n\n");
+				window.open().location.href = ("https://twitter.com/share?text=" + encodeURIComponent(twitter_url) + "&count=none&lang=ja");
+			}
+			if (gameover) {
+				var mode = "EASY"
+				if (hardmode) {
+					mode = "HARD"
+				}
+  				var twitter_url = ("私はこのポートフォリオのゲーム[" + mode + "]で " + String(score) + " 点を取得しましたが、クリアできませんでした😡\n\n");
+				window.open().location.href = ("https://twitter.com/share?text=" + encodeURIComponent(twitter_url) + "&count=none&lang=ja");
+			}
+			break;
 		case 13:
 			//	ゲームオーバー後にEnterが押されたら
 			if(gameover || gameclear) {
@@ -840,6 +908,7 @@ document.addEventListener("keydown", e => {
 				bossstart = false; // boss出現
 				gameclear = false;
 				pauseflag = false;
+				hardmode = false;
 				player.residue = 5; // 残基をリセット
 				player.deffect = false; // ダメージエフェクトを解除
 				player.x = WIDTH / 2; // X座標をリセット
