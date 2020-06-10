@@ -110,7 +110,7 @@ li {
 .header {
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  height: 80vh;
 }
 
 .bottons {
