@@ -200,7 +200,7 @@ class BossEnemySub {
 		this.cnt = 0; // カウン
 		this.hp = 10; // 体力
 		this.img = new Image();
-		this.img.src = 'static/img/self.png';
+		this.img.src = 'static/img/bosssub.png';
 		this.die = false;
 	}
 
