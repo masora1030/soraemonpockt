@@ -425,6 +425,46 @@ li {
 }
 
 /*--------------------------------
+ MyWorks
+---------------------------------*/
+.myworks-section .inner {
+  max-width: 1000px;
+}
+
+.myworks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -50px;
+}
+
+.myworks-item {
+  display: flex;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.myworks-image-wrapper {
+  flex: 0 0 60px;
+  margin-right: 20px;
+}
+
+.myworks-body {
+  flex: 1;
+}
+
+.myworks-body p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.myworks-title {
+  margin-bottom: 3px;
+}
+
+
+/*--------------------------------
  Research
 ---------------------------------*/
 .research-section .inner {
@@ -761,6 +801,26 @@ li {
   }
 
   .experience-image-wrapper {
+    flex: 0 0 75px;
+    margin-right: 15px;
+  }
+
+  /* MyWorks */
+  .myworks-list {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .myworks-item {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .myworks-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .myworks-image-wrapper {
     flex: 0 0 75px;
     margin-right: 15px;
   }
