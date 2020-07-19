@@ -795,7 +795,7 @@ function main() {
 		if (!gameclear && !gameover && gamestart) {
 			context.font = "bold 50px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.2)";
-			context.fillText("SHOT  : [Z]    MOVE  : ARROW KEYS", WIDTH / 4, HEIGHT * 2 / 3-50);
+			context.fillText("SHOT  : [Enter]  MOVE  : ARROW KEYS ([W][A][S][D])", WIDTH / 4, HEIGHT * 2 / 3-50);
 			context.fillText("PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6-50);
 			context.font = "bold 40px sans-serif";
 			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12-50);
@@ -850,13 +850,16 @@ document.addEventListener("keydown", e => {
 
     // 動き
 	switch(keyCode) {
-		case 39: key[KEY_RIGHT]	= 1; break;
-		case 37: key[KEY_LEFT]	= 1; break;
-		case 38: key[KEY_UP]	= 1; break;
-		case 40: key[KEY_DOWN]	= 1; break;
-		case 90: key[KEY_Z]++;		 break;
-		case 88: if (gamestart || pauseflag) {gamePause();} break;
-		case 69:
+		case 39: key[KEY_RIGHT]	= 1; break; // Right
+		case 68: key[KEY_RIGHT]	= 1; break; // D
+		case 37: key[KEY_LEFT]	= 1; break; // Left
+		case 65: key[KEY_LEFT]	= 1; break; // A
+		case 38: key[KEY_UP]	= 1; break; // UP
+		case 87: key[KEY_UP]	= 1; break; // W
+		case 40: key[KEY_DOWN]	= 1; break; // Down
+		case 90: key[KEY_Z]++;		 break; // Z
+		case 88: if (gamestart || pauseflag) {gamePause();} break; // X
+		case 69:                            // E
 			if (!gamestart && !pauseflag) {
 				hardmode = false;
 				for (var i=0;i<5;i++) {
@@ -864,7 +867,7 @@ document.addEventListener("keydown", e => {
 				}
 			}
 			break;
-		case 72:
+		case 72:                            // H
 			if (!gamestart && !pauseflag) {
 				hardmode = true;
 				for (var i=0;i<5;i++) {
@@ -872,17 +875,18 @@ document.addEventListener("keydown", e => {
 				}
 			}
 			break;
-		case 83:
+		case 83: 							// S
 			if (!gamestart && !pauseflag) {
 				gameStart();
 			}
+			key[KEY_DOWN]	= 1;
 			break;
-		case 82:
+		case 82:							// R
 			if (!gamestart && !pauseflag) {
 				gameEnd();
 			}
 			break;
-		case 84:
+		case 84:							// T
 			if (gameclear) {
 				var mode = "EASY"
 				if (hardmode) {
@@ -900,7 +904,7 @@ document.addEventListener("keydown", e => {
 				window.open().location.href = ("https://twitter.com/share?text=" + encodeURIComponent(twitter_url) + "&count=none&lang=ja");
 			}
 			break;
-		case 13:
+		case 13:							// Enter
 			//	ゲームオーバー後にEnterが押されたら
 			if(gameover || gameclear) {
 				gamestart = false;
@@ -926,6 +930,8 @@ document.addEventListener("keydown", e => {
 				for (var i = 0;i < 5;i++) {
 					 bosssub[i] = new BossEnemySub(boss, i)
 				}
+			} else {
+				key[KEY_Z]++;		 break;
 			}
 			break;
 	}
@@ -937,9 +943,14 @@ document.addEventListener("keyup", e => {
     // 動き
 	switch(keyCode) {
 		case 39: key[KEY_RIGHT]	= 0; break;
+		case 68: key[KEY_RIGHT]	= 0; break;
 		case 37: key[KEY_LEFT]	= 0; break;
+		case 65: key[KEY_LEFT]	= 0; break;
 		case 38: key[KEY_UP]	= 0; break;
+		case 87: key[KEY_UP]	= 0; break;
 		case 40: key[KEY_DOWN]	= 0; break;
+		case 83: key[KEY_DOWN]	= 0; break;
 		case 90: key[KEY_Z]		= 0; break;
+		case 13: key[KEY_Z]		= 0; break;
 	}
 });
