@@ -748,11 +748,11 @@ function main() {
 			context.fillStyle = "rgb(0, 0, 0)";
 			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 50);
 
-			//	Press Enter to Continueと表示する
+			//	Press [SPACE] to Continueと表示する
 			context.fillStyle = "rgb(255, 100, 100)";
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgba(255, 100, 100, " + (Math.sin(Math.PI * 2 * cnt / 200)) + ")";
-			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 50);
+			context.fillText("Press [SPACE] to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 50);
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgb(0, 172, 237)";
 			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 150);
@@ -776,11 +776,11 @@ function main() {
 			context.fillStyle = "rgb(0, 0, 0)";
 			context.fillText("Your Score : " + String(score), WIDTH / 4, HEIGHT / 2 + 50);
 
-			//	Press Enter to Continueと表示する
+			//	Press [SPACE] to Continueと表示する
 			context.fillStyle = "rgb(220, 220, 50)";
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgba(220, 220, 50, " + (Math.sin(Math.PI * 2 * cnt / 200)) + ")";
-			context.fillText("Press Enter to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 50);
+			context.fillText("Press [SPACE] to Reset", WIDTH / 4, HEIGHT * 2 / 3 + 50);
 			context.font = "bold 40px sans-serif";
 			context.fillStyle = "rgb(0, 172, 237)";
 			context.fillText("Press [T] to Share Your Score on Twitter !!", WIDTH / 4, HEIGHT * 2 / 3 + 150);
@@ -795,7 +795,7 @@ function main() {
 		if (!gameclear && !gameover && gamestart) {
 			context.font = "bold 50px sans-serif";
 			context.fillStyle = "rgba(100, 100, 100, 0.2)";
-			context.fillText("SHOT  : [Enter]  MOVE  : ARROW KEYS ([W][A][S][D])", WIDTH / 4, HEIGHT * 2 / 3-50);
+			context.fillText("SHOT  : [Enter]  MOVE  : [W][A][S][D]", WIDTH / 4, HEIGHT * 2 / 3-50);
 			context.fillText("PAUSE : [X]", WIDTH / 4, HEIGHT * 5 / 6-50);
 			context.font = "bold 40px sans-serif";
 			context.fillText("SCORE : " + String(score), WIDTH / 2 - 100, HEIGHT * 11 / 12-50);
@@ -858,6 +858,7 @@ document.addEventListener("keydown", e => {
 		case 87: key[KEY_UP]	= 1; break; // W
 		case 40: key[KEY_DOWN]	= 1; break; // Down
 		case 90: key[KEY_Z]++;		 break; // Z
+		case 13: key[KEY_Z]++;		 break; // Enter
 		case 88: if (gamestart || pauseflag) {gamePause();} break; // X
 		case 69:                            // E
 			if (!gamestart && !pauseflag) {
@@ -904,7 +905,7 @@ document.addEventListener("keydown", e => {
 				window.open().location.href = ("https://twitter.com/share?text=" + encodeURIComponent(twitter_url) + "&count=none&lang=ja");
 			}
 			break;
-		case 13:							// Enter
+		case 32:							// Space
 			//	ゲームオーバー後にEnterが押されたら
 			if(gameover || gameclear) {
 				gamestart = false;
@@ -930,8 +931,6 @@ document.addEventListener("keydown", e => {
 				for (var i = 0;i < 5;i++) {
 					 bosssub[i] = new BossEnemySub(boss, i)
 				}
-			} else {
-				key[KEY_Z]++;		 break;
 			}
 			break;
 	}
