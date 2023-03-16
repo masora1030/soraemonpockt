@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sora Takashima</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px;
+  }
+
+  header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 40px;
+    color: #1abc9c;
+  }
+
+  header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+
+  .section h2 {
+    font-size: 30px;
+color: #1abc9c;
+margin-bottom: 20px;
+}
+
+.item {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.item img {
+width: 50px;
+height: 50px;
+margin-right: 20px;
+}
+
+.language-toggle {
+position: fixed;
+top: 10px;
+right: 10px;
+background-color: #1abc9c;
+color: white;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.language-toggle:focus {
+outline: none;
+}
+</style>
+
+</head>
+<body>
+  <button class="language-toggle" onclick="toggleLanguage()">English</button>
+  <div class="container">
+    <header>
+      <img src="your-photo-url.jpg" alt="Sora Takashima">
+      <h1>Sora Takashima</h1>
+      <p>Self-introduction goes here...</p>
+    </header>
+    <section class="section">
+      <h2>Educational Background</h2>
+      <!-- Add more items as needed -->
+      <div class="item">
+        <img src="icon-url.png" alt="Education Icon">
+        <p>School Name, Degree, Years</p>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Experience</h2>
+      <!-- Add more items as needed -->
+      <div class="item">
+        <img src="icon-url.png" alt="Experience Icon">
+        <p>Job Title, Company, Years</p>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Works</h2>
+      <!-- Add more items as needed -->
+      <div class="item">
+        <img src="icon-url.png" alt="Work Icon">
+        <p>Project Name, Description, Link</p>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Research</h2>
+      <!-- Add more items as needed -->
+      <div class="item">
+        <img src="icon-url.png" alt="Research Icon">
+        <p>Research Topic, Description, Link</p>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Contact Information</h2>
+      <!-- Add more items as needed -->
+      <div class="item">
+        <img src="icon-url.png" alt="Email Icon">
+        <p>Email Address</p>
+      </div>
+    </section>
+  </div>
+  <script>
+    function toggleLanguage() {
+      const button = document.querySelector('.language-toggle');
+      const currentLanguage = button.textContent;
+  
+      if (currentLanguage === 'English') {
+        button.textContent = 'Japanese';
+        // Add functionality to switch the content to Japanese
+      } else {
+        button.textContent = 'English';
+        // Add functionality to switch the content back to English
+      }
+    }
+  </script>
+</body>
+</html>
