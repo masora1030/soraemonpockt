@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sora Takashima - Portfolio</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sora Takashima Portfolio">
+    <meta property="og:url" content="https://masora1030.github.io/soraemonpockt/">
+    <meta property="og:description" content="Machine Learning Engineer & Researcher Portfolio">
+    <meta property="og:image" content="static/img/bosssub.png">
+    <link rel="shortcut icon" href="static/img/self.png">
+    <link rel="canonical" href="https://masora1030.github.io/soraemonpockt/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/professional-style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+    
+    <!-- Subtle Background Elements -->
+    <div class="floating-bg">
+        <div class="floating-element" data-speed="0.2">·</div>
+        <div class="floating-element" data-speed="0.3">·</div>
+        <div class="floating-element" data-speed="0.15">·</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">ST</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link" data-section="hero">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ja">ホーム</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">
+                        <span class="lang-en">About</span>
+                        <span class="lang-ja">自己紹介</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <span class="lang-en">Experience</span>
+                        <span class="lang-ja">経歴</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link" data-section="research">
+                        <span class="lang-en">Research</span>
+                        <span class="lang-ja">研究</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-ja">連絡先</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="nav-hamburger" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-intro">
+                    <p class="hero-greeting">
+                        <span class="lang-en">Hello, I'm</span>
+                        <span class="lang-ja">こんにちは、私は</span>
+                    </p>
+                    <h1 class="hero-name">Sora Takashima</h1>
+                    <div class="hero-title">
+                        <span class="lang-en">Machine Learning Engineer</span>
+                        <span class="lang-ja">機械学習エンジニア</span>
+                    </div>
+                </div>
+                
+                <div class="hero-description">
+                    <p class="lang-en">
+                        Passionate about advancing artificial intelligence through innovative research and practical applications. 
+                        Specializing in computer vision, deep learning, and scalable ML systems.
+                    </p>
+                    <p class="lang-ja">
+                        革新的な研究と実用的なアプリケーションを通じて人工知能の発展に情熱を注いでいます。
+                        コンピュータビジョン、深層学習、スケーラブルなMLシステムを専門としています。
+                    </p>
+                </div>
+                
+                <div class="hero-cta">
+                    <button class="cta-primary" onclick="scrollToSection('about')">
+                        <span class="lang-en">Explore My Work</span>
+                        <span class="lang-ja">私の仕事を見る</span>
+                    </button>
+                    <button class="cta-secondary" onclick="scrollToSection('contact')">
+                        <span class="lang-en">Get in Touch</span>
+                        <span class="lang-ja">お問い合わせ</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="profile-container">
+                    <img src="static/img/about/profile.jpg" alt="Sora Takashima" class="profile-img">
+                    <div class="profile-frame"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">About Me</span>
+                    <span class="lang-ja">自己紹介</span>
+                </h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lang-en">
+                        I am a Machine Learning Engineer with extensive experience in developing and deploying AI solutions across various domains. 
+                        My work spans from research in computer vision to building production-ready ML systems at scale.
+                    </p>
+                    <p class="lang-ja">
+                        私は様々な分野でAIソリューションの開発と展開の豊富な経験を持つ機械学習エンジニアです。
+                        コンピュータビジョンの研究から大規模な本番対応MLシステムの構築まで幅広く手がけています。
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number">10+</span>
+                            <span class="highlight-text">
+                                <span class="lang-en">Companies</span>
+                                <span class="lang-ja">社での経験</span>
+                            </span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">15+</span>
+                            <span class="highlight-text">
+                                <span class="lang-en">Publications</span>
+                                <span class="lang-ja">論文発表</span>
+                            </span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">5+</span>
+                            <span class="highlight-text">
+                                <span class="lang-en">Years Experience</span>
+                                <span class="lang-ja">年の経験</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-container">
+                    <h3 class="skills-title">
+                        <span class="lang-en">Core Expertise</span>
+                        <span class="lang-ja">専門分野</span>
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Machine Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Computer Vision</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Deep Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python/PyTorch</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">Professional Experience</span>
+                    <span class="lang-ja">職歴</span>
+                </h2>
+            </div>
+            
+            <div class="timeline">
+                <!-- LY Corporation -->
+                <div class="timeline-item" onclick="toggleExperience(this)">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-info">
+                                <img src="static/img/experience/icon_ly.png" alt="LY Corporation" class="company-icon">
+                                <div class="company-details">
+                                    <h3 class="company-name">LY Corporation</h3>
+                                    <p class="job-title">Machine Learning Engineer</p>
+                                    <p class="job-period">April 2024 - Present</p>
+                                </div>
+                            </div>
+                            <div class="expand-indicator">+</div>
+                        </div>
+                        <div class="timeline-details">
+                            <p class="lang-en">
+                                Working on large-scale machine learning systems for Yahoo! JAPAN services, focusing on recommendation algorithms and user experience optimization.
+                            </p>
+                            <p class="lang-ja">
+                                Yahoo! JAPANのサービス向け大規模機械学習システムの開発に従事し、推薦アルゴリズムとユーザー体験の最適化に取り組んでいます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AIST -->
+                <div class="timeline-item" onclick="toggleExperience(this)">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-info">
+                                <img src="static/img/experience/icon_aist.jpeg" alt="AIST" class="company-icon">
+                                <div class="company-details">
+                                    <h3 class="company-name">AIST</h3>
+                                    <p class="job-title">Research Assistant</p>
+                                    <p class="job-period">April 2022 - March 2024</p>
+                                </div>
+                            </div>
+                            <div class="expand-indicator">+</div>
+                        </div>
+                        <div class="timeline-details">
+                            <p class="lang-en">
+                                Conducted research in computer vision and deep learning at the National Institute of Advanced Industrial Science and Technology. Published multiple papers in top-tier conferences.
+                            </p>
+                            <p class="lang-ja">
+                                産業技術総合研究所でコンピュータビジョンと深層学習の研究に従事。トップティア会議で複数の論文を発表しました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NTT DATA -->
+                <div class="timeline-item" onclick="toggleExperience(this)">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-info">
+                                <img src="static/img/experience/icon_nttdata.png" alt="NTT DATA" class="company-icon">
+                                <div class="company-details">
+                                    <h3 class="company-name">NTT DATA</h3>
+                                    <p class="job-title">AI Engineer Internship</p>
+                                    <p class="job-period">March 2022</p>
+                                </div>
+                            </div>
+                            <div class="expand-indicator">+</div>
+                        </div>
+                        <div class="timeline-details">
+                            <p class="lang-en">
+                                Developed AI solutions for enterprise clients, focusing on natural language processing and automated data analysis systems.
+                            </p>
+                            <p class="lang-ja">
+                                企業クライアント向けのAIソリューションの開発に携わり、自然言語処理と自動データ分析システムに注力しました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Show More Button (Hidden initially) -->
+                <div class="show-more-container">
+                    <button class="show-more-btn" onclick="toggleAllExperiences()">
+                        <span class="lang-en">Show All Experience</span>
+                        <span class="lang-ja">すべての経歴を表示</span>
+                    </button>
+                </div>
+
+                <!-- Additional experiences (hidden by default) -->
+                <div class="additional-experiences" style="display: none;">
+                    <!-- Yahoo! JAPAN -->
+                    <div class="timeline-item" onclick="toggleExperience(this)">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="company-info">
+                                    <img src="static/img/experience/icon_yahoo.png" alt="Yahoo! JAPAN" class="company-icon">
+                                    <div class="company-details">
+                                        <h3 class="company-name">Yahoo! JAPAN</h3>
+                                        <p class="job-title">Software Engineer Internship</p>
+                                        <p class="job-period">September 2021</p>
+                                    </div>
+                                </div>
+                                <div class="expand-indicator">+</div>
+                            </div>
+                            <div class="timeline-details">
+                                <p class="lang-en">
+                                    Worked on improving search algorithms and implementing machine learning features for Yahoo! JAPAN's search platform.
+                                </p>
+                                <p class="lang-ja">
+                                    Yahoo! JAPANの検索プラットフォームにおける検索アルゴリズムの改善と機械学習機能の実装に取り組みました。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue with other companies... -->
+                    <!-- Sony -->
+                    <div class="timeline-item" onclick="toggleExperience(this)">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="company-info">
+                                    <img src="static/img/experience/sony_icon.jpeg" alt="Sony" class="company-icon">
+                                    <div class="company-details">
+                                        <h3 class="company-name">Sony</h3>
+                                        <p class="job-title">Research Internship</p>
+                                        <p class="job-period">August 2021</p>
+                                    </div>
+                                </div>
+                                <div class="expand-indicator">+</div>
+                            </div>
+                            <div class="timeline-details">
+                                <p class="lang-en">
+                                    Conducted research on computer vision applications for imaging devices and developed prototype algorithms for image enhancement.
+                                </p>
+                                <p class="lang-ja">
+                                    イメージングデバイス向けのコンピュータビジョン応用の研究を行い、画像強化のプロトタイプアルゴリズムを開発しました。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional companies can be added here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">Research & Publications</span>
+                    <span class="lang-ja">研究・論文</span>
+                </h2>
+            </div>
+            
+            <div class="research-grid">
+                <!-- CVPR 2023 -->
+                <div class="research-card">
+                    <div class="research-badge">CVPR 2023</div>
+                    <div class="research-content">
+                        <h3 class="research-title">
+                            <span class="lang-en">Pre-training Vision Transformers with Very Limited Synthesized Images</span>
+                            <span class="lang-ja">非常に限られた合成画像によるVision Transformersの事前学習</span>
+                        </h3>
+                        <p class="research-authors">
+                            <span class="lang-en"><strong>Sora Takashima</strong>, Ryo Suzuki, Ryo Igarashi, Hirokatsu Kataoka</span>
+                            <span class="lang-ja"><strong>高島 空良</strong>, 鈴木 亮, 五十嵐 崚, 片岡 裕雄</span>
+                        </p>
+                        <div class="research-links">
+                            <a href="#" class="research-link">Paper</a>
+                            <a href="#" class="research-link">Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CVPR 2022 -->
+                <div class="research-card">
+                    <div class="research-badge">CVPR 2022</div>
+                    <div class="research-content">
+                        <h3 class="research-title">
+                            <span class="lang-en">Replacing Labeled Real-Image Datasets With Auto-Generated Contours</span>
+                            <span class="lang-ja">ラベル付き実画像データセットの自動生成輪郭による置換</span>
+                        </h3>
+                        <p class="research-authors">
+                            <span class="lang-en">Hirokatsu Kataoka, Ryo Hayamizu, <strong>Sora Takashima</strong>, et al.</span>
+                            <span class="lang-ja">片岡 裕雄, 早水 亮, <strong>高島 空良</strong>, 他</span>
+                        </p>
+                        <div class="research-links">
+                            <a href="#" class="research-link">Paper</a>
+                            <a href="#" class="research-link">Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Show More Research -->
+                <div class="research-more">
+                    <button class="show-more-research" onclick="toggleResearch()">
+                        <span class="lang-en">View All Publications</span>
+                        <span class="lang-ja">すべての論文を表示</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">Let's Connect</span>
+                    <span class="lang-ja">お気軽にご連絡ください</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-en">Interested in collaboration or have a question? I'd love to hear from you.</span>
+                    <span class="lang-ja">共同研究やご質問がございましたら、お気軽にお声がけください。</span>
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:masora1030@gmail.com">masora1030@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/soratakashima/" target="_blank">soratakashima</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🔬</div>
+                        <div class="contact-details">
+                            <h4>Google Scholar</h4>
+                            <a href="https://scholar.google.com/citations?user=QqmRNBwAAAAJ" target="_blank">Publications</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">
+                                <span class="lang-en">Your Name</span>
+                                <span class="lang-ja">お名前</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">
+                                <span class="lang-en">Message</span>
+                                <span class="lang-ja">メッセージ</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="lang-en">Send Message</span>
+                            <span class="lang-ja">メッセージを送信</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Game Canvas (Easter Egg) -->
+    <div class="game-easter-egg" id="game-container" style="display: none;">
+        <div class="game-overlay">
+            <canvas id="game-canvas" width="800" height="500"></canvas>
+            <button class="game-close" onclick="closeGame()">×</button>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" onclick="scrollToTop()">
+        <span>↑</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="static/js/professional-portfolio.js"></script>
+    <script src="static/js/epic-game.js"></script>
+</body>
+</html>

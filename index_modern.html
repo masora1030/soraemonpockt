@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sora Takashima - Portfolio</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sora Takashima Portfolio">
+    <meta property="og:url" content="https://masora1030.github.io/soraemonpockt/">
+    <meta property="og:description" content="Machine Learning Engineer & Researcher Portfolio">
+    <meta property="og:image" content="static/img/bosssub.png">
+    <link rel="shortcut icon" href="static/img/self.png">
+    <link rel="canonical" href="https://masora1030.github.io/soraemonpockt/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/modern-style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+    
+    <!-- Floating Background Elements -->
+    <div class="floating-bg">
+        <div class="floating-element" data-speed="0.5"></div>
+        <div class="floating-element" data-speed="0.8"></div>
+        <div class="floating-element" data-speed="0.3"></div>
+        <div class="floating-element" data-speed="0.6"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">ST</span>
+                <div class="logo-pulse"></div>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link" data-section="hero">
+                        <span>Home</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">
+                        <span>About</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <span>Experience</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link" data-section="research">
+                        <span>Research</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#game" class="nav-link" data-section="game">
+                        <span>Game</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">
+                        <span>Contact</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-en">EN</span>
+                    <span class="lang-ja">JP</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <img src="static/img/about/profile.jpg" alt="Sora Takashima" class="profile-img">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="greeting-emoji">👋</span>
+                        <span class="greeting-text lang-content" data-en="Hello, I'm" data-ja="こんにちは、私は">Hello, I'm</span>
+                    </div>
+                    
+                    <h1 class="hero-name">
+                        <span class="name-part">Sora</span>
+                        <span class="name-part">Takashima</span>
+                    </h1>
+                    
+                    <div class="hero-title">
+                        <div class="typewriter">
+                            <span class="typewriter-text lang-content" 
+                                  data-en="Machine Learning Engineer" 
+                                  data-ja="機械学習エンジニア">Machine Learning Engineer</span>
+                        </div>
+                    </div>
+                    
+                    <p class="hero-description lang-content" 
+                       data-en="Passionate about AI research, computer vision, and building intelligent systems that make a difference."
+                       data-ja="AI研究、コンピュータビジョン、そして世界を変えるインテリジェントシステムの構築に情熱を注いでいます。">
+                        Passionate about AI research, computer vision, and building intelligent systems that make a difference.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <button class="cta-primary" onclick="scrollToSection('about')">
+                            <span class="cta-text lang-content" data-en="Explore My Work" data-ja="私の仕事を見る">Explore My Work</span>
+                            <div class="cta-arrow">→</div>
+                        </button>
+                        <button class="cta-secondary" onclick="scrollToSection('game')">
+                            <span class="cta-text lang-content" data-en="Play Game" data-ja="ゲームで遊ぶ">Play Game</span>
+                            <div class="cta-icon">🎮</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-text lang-content" data-en="Scroll to explore" data-ja="スクロールして探索">Scroll to explore</div>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-content" data-en="About Me" data-ja="自己紹介">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3 class="lang-content" data-en="Background" data-ja="経歴">Background</h3>
+                        <p class="lang-content" 
+                           data-en="I am currently working as a NLP machine learning engineer at LY Corporation. I completed my master's degree at YOKOTA Lab. in Tokyo Institute of Technology, where I researched large-scale distributed learning with supercomputing and computer vision."
+                           data-ja="現在、LINEヤフーで自然言語処理を扱う機械学習エンジニアとして働いています。東京工業大学の横田研究室で修士課程を修了し、スパコンを用いた大規模分散深層学習と画像認識の研究に従事していました。">
+                            I am currently working as a NLP machine learning engineer at LY Corporation. I completed my master's degree at YOKOTA Lab. in Tokyo Institute of Technology, where I researched large-scale distributed learning with supercomputing and computer vision.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h3 class="lang-content" data-en="Interests" data-ja="趣味">Interests</h3>
+                        <p class="lang-content" 
+                           data-en="Beyond work, I enjoy competitive programming as a hobby. You can find my profiles on AtCoder and Codeforces. I'm passionate about solving algorithmic challenges and continuously improving my problem-solving skills."
+                           data-ja="仕事以外では、趣味で競技プログラミングを楽しんでいます。AtCoderやCodeforcesで活動しており、アルゴリズムの課題を解くことや問題解決スキルの向上に情熱を注いでいます。">
+                            Beyond work, I enjoy competitive programming as a hobby. You can find my profiles on AtCoder and Codeforces. I'm passionate about solving algorithmic challenges and continuously improving my problem-solving skills.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4 class="lang-content" data-en="Machine Learning" data-ja="機械学習">Machine Learning</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4 class="lang-content" data-en="Programming" data-ja="プログラミング">Programming</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4 class="lang-content" data-en="Infrastructure" data-ja="インフラ">Infrastructure</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">GCP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-content" data-en="Experience" data-ja="経歴">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-year="2023-現在">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_ly.png" alt="LY Corporation">
+                        </div>
+                        <div class="experience-details">
+                            <h3 class="job-title">Machine Learning Engineer</h3>
+                            <h4 class="company-name">LY Corporation</h4>
+                            <p class="job-period">April 2023 - Present</p>
+                            <p class="job-description lang-content"
+                               data-en="Working to improve the quality of location search using neural search technology. Developing systems to enhance coverage and accuracy of location information presented to users for web search queries."
+                               data-ja="ニューラル検索技術を用いてロケーション検索の品質向上に取り組んでいます。ユーザーのWeb検索クエリに対する拠点情報のカバレッジと精度を高めるシステムを開発しています。">
+                                Working to improve the quality of location search using neural search technology. Developing systems to enhance coverage and accuracy of location information presented to users for web search queries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2021-2023">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_aist.jpeg" alt="AIST">
+                        </div>
+                        <div class="experience-details">
+                            <h3 class="job-title">Research Assistant</h3>
+                            <h4 class="company-name">National Institute of Advanced Industrial Science and Technology (AIST)</h4>
+                            <p class="job-period">April 2021 - March 2023</p>
+                            <p class="job-description lang-content"
+                               data-en="Conducted research as a Research Assistant at the Digital Architecture Research Center (DigiARC). Focused primarily on computer vision and large-scale deep learning research."
+                               data-ja="Digital Architecture Research Center (DigiARC)でリサーチアシスタントとして研究に従事。主に大規模分散深層学習と画像認識の研究を行いました。">
+                                Conducted research as a Research Assistant at the Digital Architecture Research Center (DigiARC). Focused primarily on computer vision and large-scale deep learning research.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2021-2022">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_yahoo.png" alt="Yahoo! Japan">
+                        </div>
+                        <div class="experience-details">
+                            <h3 class="job-title">R&D Internship</h3>
+                            <h4 class="company-name">Yahoo! Japan</h4>
+                            <p class="job-period">October 2021 - November 2021</p>
+                            <p class="job-description lang-content"
+                               data-en="Examined and evaluated ways to improve accuracy by introducing neural search technology for reranking learning in location search. Co-authored research paper published at JSAI 2022."
+                               data-ja="拠点検索におけるリランキング学習に対して、ニューラル検索技術導入による精度向上手法を検討・評価。JSAI 2022で共著論文を発表。">
+                                Examined and evaluated ways to improve accuracy by introducing neural search technology for reranking learning in location search. Co-authored research paper published at JSAI 2022.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-content" data-en="Research & Publications" data-ja="研究・論文">Research & Publications</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="research-grid">
+                <div class="research-item featured">
+                    <div class="research-badge">ICCV 2023</div>
+                    <h3 class="research-title">Pre-training Vision Transformers with Very Limited Synthesized Images</h3>
+                    <p class="research-authors">Ryo Nakamura, Hirokatsu Kataoka, <strong>Sora Takashima</strong>, Edgar Josafat Martinez Noriega, Rio Yokota and Nakamasa Inoue</p>
+                    <p class="research-venue">IEEE/CVF International Conference on Computer Vision (ICCV 2023)</p>
+                    <p class="research-stats">Accept rate: 26.2%</p>
+                    <div class="research-links">
+                        <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Nakamura_Pre-training_Vision_Transformers_with_Very_Limited_Synthesized_Images_ICCV_2023_paper.pdf" class="research-link" target="_blank">Paper</a>
+                        <a href="https://ryoo-nakamura.github.io/One-instance-FractalDB/" class="research-link" target="_blank">Project</a>
+                    </div>
+                </div>
+                
+                <div class="research-item featured">
+                    <div class="research-badge">CVPR 2023</div>
+                    <h3 class="research-title">Visual Atoms: Pre-training Vision Transformers with Sinusoidal Waves</h3>
+                    <p class="research-authors"><strong>Sora Takashima</strong>, Ryo Hayamizu, Hirokatsu Kataoka, Nakamasa Inoue, and Rio Yokota</p>
+                    <p class="research-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2023)</p>
+                    <p class="research-stats">Accept rate: 25.8%</p>
+                    <div class="research-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Takashima_Visual_Atoms_Pre-Training_Vision_Transformers_With_Sinusoidal_Waves_CVPR_2023_paper.pdf" class="research-link" target="_blank">Paper</a>
+                        <a href="https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/" class="research-link" target="_blank">Project</a>
+                    </div>
+                </div>
+                
+                <div class="research-item">
+                    <div class="research-badge">CVPR 2022</div>
+                    <h3 class="research-title">Replacing Labeled Real-Image Datasets With Auto-Generated Contours</h3>
+                    <p class="research-authors">Hirokatsu Kataoka, Ryo Hayamizu, Ryosuke Yamada, Kodai Nakashima, <strong>Sora Takashima</strong>, et al.</p>
+                    <p class="research-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2022)</p>
+                    <div class="research-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Kataoka_Replacing_Labeled_Real-Image_Datasets_With_Auto-Generated_Contours_CVPR_2022_paper.html" class="research-link" target="_blank">Paper</a>
+                        <a href="https://hirokatsukataoka16.github.io/Replacing-Labeled-Real-Image-Datasets/" class="research-link" target="_blank">Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="game-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-content" data-en="Interactive Game" data-ja="インタラクティブゲーム">Interactive Game</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="game-container">
+                <div class="game-info">
+                    <h3 class="lang-content" data-en="Bullet Hell Adventure" data-ja="弾幕アドベンチャー">Bullet Hell Adventure</h3>
+                    <p class="lang-content"
+                       data-en="Experience a unique browser-based bullet hell game featuring myself as the boss! Navigate through challenging patterns and test your reflexes in this interactive portfolio feature."
+                       data-ja="私自身がボスとして登場するユニークなブラウザベースの弾幕ゲームを体験してください！挑戦的なパターンをナビゲートし、このインタラクティブなポートフォリオ機能で反射神経をテストしてください。">
+                        Experience a unique browser-based bullet hell game featuring myself as the boss! Navigate through challenging patterns and test your reflexes in this interactive portfolio feature.
+                    </p>
+                    
+                    <div class="game-controls">
+                        <div class="control-group">
+                            <h4 class="lang-content" data-en="Controls" data-ja="操作方法">Controls</h4>
+                            <div class="control-item">
+                                <span class="key">W A S D</span>
+                                <span class="lang-content" data-en="Move" data-ja="移動">Move</span>
+                            </div>
+                            <div class="control-item">
+                                <span class="key">Enter</span>
+                                <span class="lang-content" data-en="Shoot" data-ja="ショット">Shoot</span>
+                            </div>
+                            <div class="control-item">
+                                <span class="key">X</span>
+                                <span class="lang-content" data-en="Pause" data-ja="ポーズ">Pause</span>
+                            </div>
+                        </div>
+                        
+                        <div class="game-modes">
+                            <button class="mode-btn active" data-mode="easy">
+                                <span class="lang-content" data-en="Easy Mode" data-ja="イージーモード">Easy Mode</span>
+                            </button>
+                            <button class="mode-btn" data-mode="hard">
+                                <span class="lang-content" data-en="Hard Mode" data-ja="ハードモード">Hard Mode</span>
+                            </button>
+                        </div>
+                        
+                        <button class="start-game-btn" onclick="gameStart()">
+                            <span class="lang-content" data-en="Start Game" data-ja="ゲーム開始">Start Game</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="game-canvas-container">
+                    <canvas id="canvas" width="1000" height="600"></canvas>
+                    <div class="canvas-overlay">
+                        <div class="game-status" id="game-status">
+                            <span class="lang-content" data-en="Click Start Game to begin!" data-ja="ゲーム開始をクリックして始めよう！">Click Start Game to begin!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-content" data-en="Let's Connect" data-ja="お気軽にご連絡ください">Let's Connect</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle lang-content"
+                   data-en="I'm always interested in new opportunities and collaborations"
+                   data-ja="新しい機会やコラボレーションにいつでも興味があります">
+                    I'm always interested in new opportunities and collaborations
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:soraemonpockt@rio.gsic.titech.ac.jp">soraemonpockt@rio.gsic.titech.ac.jp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🎯</div>
+                        <div class="contact-details">
+                            <h4 class="lang-content" data-en="Competitive Programming" data-ja="競技プログラミング">Competitive Programming</h4>
+                            <div class="cp-links">
+                                <a href="https://atcoder.jp/users/Skygood" target="_blank">AtCoder</a>
+                                <a href="https://codeforces.com/profile/soraemonpockt" target="_blank">Codeforces</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://twitter.com/soraemonpockts" class="social-link twitter" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_tw.png" alt="Twitter">
+                        </div>
+                        <span>Twitter</span>
+                    </a>
+                    
+                    <a href="https://github.com/masora1030" class="social-link github" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_gh.png" alt="GitHub">
+                        </div>
+                        <span>GitHub</span>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/sora-takashima" class="social-link linkedin" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_li.png" alt="LinkedIn">
+                        </div>
+                        <span>LinkedIn</span>
+                    </a>
+                    
+                    <a href="https://www.facebook.com/soraemonpockt" class="social-link facebook" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_fb.png" alt="Facebook">
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p class="lang-content" 
+                       data-en="© 2025 Sora Takashima. Crafted with passion and lots of coffee ☕"
+                       data-ja="© 2025 高島空良. 情熱とたくさんのコーヒーで作られました ☕">
+                        © 2025 Sora Takashima. Crafted with passion and lots of coffee ☕
+                    </p>
+                </div>
+                <button class="back-to-top" onclick="scrollToTop()">
+                    <span>↑</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="static/js/modern-portfolio.js"></script>
+    <script src="static/main.js"></script>
+</body>
+</html>

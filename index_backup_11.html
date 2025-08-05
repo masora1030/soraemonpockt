@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property='og:type' content='website'>
+<meta property='og:title' content='Sora Takashima Portfolio'>
+<meta property='og:url' content='https://masora1030.github.io/soraemonpockt/'>
+<meta property='og:description' content='Sora Takashima Portfolio'>
+<meta property="og:image" content="static/img/bosssub.png">
+<meta name="description" content="Sora Takashima Portfolio" />
+<link rel="shortcut icon" href="static/img/self.png" />
+<link rel=”canonical” href=”https://masora1030.github.io/soraemonpockt/” />
+<title>Sora Takashima</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  header img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  header h1 {
+    font-size: 36px;
+    margin: 10px 0;
+  }
+
+  header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .hamburger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .hamburger-menu i {
+    font-size: 36px;
+    color: #1abc9c;
+  }
+
+  .nav {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav li {
+    margin-bottom: 10px;
+  }
+
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .nav a:hover {
+    color: #1abc9c;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+
+  .section h2 {
+    font-size: 30px;
+    color: #1abc9c;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #1abc9c;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .grid a {
+    text-decoration: none;
+  }
+
+  .item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+
+  .contact-grid {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-bottom: 20px;
+}
+
+.circle {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background-color: #1abc9c;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s ease;
+}
+
+.circle:hover {
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+transform: translateY(-5px);
+}
+
+.circle img {
+width: 50px;
+}
+
+    .scroll-to-top {
+    background-color: #34495e;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    }
+
+    .language-toggle {
+    background-color: #34495e;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    }
+
+    .scroll-to-top.active{
+    opacity: 1;
+    pointer-events: auto;
+    }
+
+    .scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    }
+
+    .language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    }
+</style>
+
+</head>
+<body>
+  <div class="hamburger-menu" onclick="toggleMenu()">
+    <i class="material-icons">menu</i>
+  </div>
+  <div class="nav" id="nav">
+    <ul>
+      <li><a href="#experience" onclick="scrollToSectionSmoothly('experience')">Experience</a></li>
+      <li><a href="#research" onclick="scrollToSectionSmoothly('research')">Research</a></li>
+      <li><a href="#education" onclick="scrollToSectionSmoothly('education')">Education</a></li>
+      <li><a href="#works" onclick="scrollToSectionSmoothly('works')">Works</a></li>
+      <li><a href="#contact" onclick="scrollToSectionSmoothly('contact')">Contact</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <header>
+      <img src="static/img/about/profile.jpg" alt="Sora Takashima" onclick="moveProfileImage()">
+      <h1 class="langCng" lang="EN">Sora Takashima</h1>
+      <h1 class="langCng" lang="JP">高島 空良</h1>
+      <p class="langCng" lang="EN">
+        Thank you for viewing my portfolio site!<br>
+        I am Sora Takashima, currently working as a NLP machine learning engineer.<br>
+        I have completed my master's degree at <a href="https://www.rio.gsic.titech.ac.jp/jp/index.html" target="_blank">YOKOTA Lab.</a> in <a href="https://www.titech.ac.jp" target="_blank">Tokyo Institute of Technology</a>.<br>
+        My research interests include large-scale distributed learning with supercomputing and computer vision.<br>
+        I am also playing competitive programming (<a href="https://atcoder.jp/users/Skygood" target="_blank">AtCoder profile</a>, <a href="https://codeforces.com/profile/soraemonpockt" target="_blank">Codeforces profile</a>) as hobbies.
+        </p>
+        <p class="langCng" lang="JP">
+            こんにちは！<br>
+            私は現在、自然言語処理を扱う機械学習エンジニアとして働いている、高島空良（タカシマ ソラ）と申します。<br>
+            修士課程では、スパコンを用いた大規模分散深層学習や画像認識についての研究に従事していました。<br>
+            趣味で少しだけ競技プログラミング(<a href="https://atcoder.jp/users/Skygood" target="_blank">AtCoder profile</a>, <a href="https://codeforces.com/profile/soraemonpockt" target="_blank">Codeforces profile</a>)を嗜んでいます。
+            </p>
+    </header>
+    <section class="section" id="head-contact">
+        <div class="contact-grid">
+          <!-- Add more items as needed -->
+          <div class="circle">
+            <a class="contact-link" href="https://twitter.com/soraemonpockts" target="_blank">
+              <img src="static/img/contact/icon_tw.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="https://www.facebook.com/soraemonpockt" target="_blank">
+              <img src="static/img/contact/icon_fb.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="https://github.com/masora1030" target="_blank">
+              <img src="static/img/contact/icon_gh.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="https://www.linkedin.com/in/sora-takashima" target="_blank">
+              <img src="static/img/contact/icon_li.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="mailto:soraemonpockt@rio.gsic.titech.ac.jp" target="_blank">
+              <img src="static/img/contact/mail_icon.png" alt="Email Icon">
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="experience">
+        <h2>Experience</h2>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_ly.png" alt="Experience Icon">
+                  <div>
+                    <h3>Machine Learning Engineer (Apr. 2023 - present)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.lycorp.co.jp/en/" target="_blank">LY corporation</a>, Tokyo, present, Full-time employee</p>
+                    <p class="langCng" lang="JP"><a href="https://www.lycorp.co.jp/ja/" target="_blank">LINEヤフー</a>, 東京, 現職, 正社員</p>
+                    <p class="langCng" lang="EN">
+                        As a machine learning engineer, working to improve the quality of location search using neural search technology.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        機械学習エンジニアとして、ユーザーのWeb検索クエリに対して掲示する拠点情報のカバレッジと精度を高めるプロジェクトに従事しています。
+                    </p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_aist.jpeg" alt="Experience Icon">
+                  <div>
+                    <h3>Research Assistant (Apr. 2021 - Mar. 2023)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.aist.go.jp/index_en.html" target="_blank">National Institute of Advanced Industrial Science and Technology (AIST)</a>, Tokyo, 2 years, part-time-job</p>
+                    <p class="langCng" lang="JP"><a href="https://www.aist.go.jp" target="_blank">産業技術総合研究所</a>, 東京, 2年, アルバイト</p>
+                    <p class="langCng" lang="EN">
+                        I worked as a Research Assistant at the <a href="https://www.digiarc.aist.go.jp/en" target="_blank">Digital Architecture Research Center (DigiARC)</a>.<br>
+                        I researched primarily about computer vision and large-scale deep learning. Details of research is <a href="#research" onclick="scrollToSectionSmoothly('research')">here</a>.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        <a href="https://www.digiarc.aist.go.jp/en" target="_blank">Digital Architecture Research Center (DigiARC)</a>にリサーチアシスタントとして所属し研究に従事していました。<br>
+                        主な研究分野は大規模分散深層学習と画像認識です。研究成果の詳細は<a href="#research" onclick="scrollToSectionSmoothly('research')">こちら</a>。
+                    </p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_nttdata.png" alt="Experience Icon">
+                  <div>
+                    <h3>Research and Development Internship (Feb. 2022)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.nttdata.com/global/en" target="_blank">NTT DATA</a>, Tokyo, 3 weeks, Full-time internship</p>
+                    <p class="langCng" lang="JP"><a href="https://www.nttdata.com/jp/ja" target="_blank">NTT DATA</a>, 東京, 3週間, フルタイムインターンシップ</p>
+                    <p class="langCng" lang="EN">
+                        I engaged in improving the accuracy of the object detection task for illustration images.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        研究開発インターンシップにて、イラスト画像の物体検出タスクの精度改善に取り組みました。
+                    </p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_yahoo.png" alt="Experience Icon">
+                  <div>
+                    <h3>Research and Development Internship (Oct. 2021 - Nov. 2021)</h3>
+                    <p class="langCng" lang="EN"><a href="https://about.yahoo.co.jp/en/info" target="_blank">Yahoo! Japan</a>, Tokyo, 3 weeks, Full-time internship</p>
+                    <p class="langCng" lang="JP"><a href="https://about.yahoo.co.jp" target="_blank">Yahoo! Japan</a>, 東京, 3週間, フルタイムインターンシップ</p>
+                    <p class="langCng" lang="EN">
+                        For reranking learning when searching for locations, I examined and evaluated ways to improve accuracy by introducing neural search technology, etc.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        研究開発インターンシップにて、拠点検索を行う際のリランキング学習に対して、ニューラル検索技術導入などによる精度向上を検討し評価しました。
+                    </p>
+                    <p class="langCng" lang="EN">Submitted Paper : <a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_4O1GS404/_article/-char/en" target="_blank">Hybrid POI Search Combining Geographical Features and Deep Metric Learning-based Semantic Similarity</a></p>
+                    <p class="langCng" lang="JP">成果が含まれる共著論文 : <a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_4O1GS404/_article/-char/ja" target="_blank">地理的距離等の数値情報と深層距離学習に基づく意味的類似度を用いた拠点検索</a></p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/sony_icon.jpeg" alt="Experience Icon">
+                  <div>
+                    <h3>Research and Development Internship (Sep. 2021 - Oct. 2021)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.sony.com/en/SonyInfo/research" target="_blank">Sony | R&D</a>, Tokyo, 3 weeks, Full-time internship</p>
+                    <p class="langCng" lang="JP"><a href="https://www.sony.com/ja/SonyInfo/research" target="_blank">Sony | R&D</a>, 東京, 3週間, フルタイムインターンシップ</p>
+                    <p class="langCng" lang="EN">
+                        I investigated deep learning methods for domain generalization for image classification of cross-domain pathological image datasets.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        研究開発インターンシップにて、クロスドメインな病理画像データセットの画像分類を行う深層学習タスクに対して、ドメイン汎化する学習手法の検討を行いました。
+                    </p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_line.png" alt="Experience Icon">
+                  <div>
+                    <h3>Software Engineer Internship (Aug. 2021 - Sep. 2021)</h3>
+                    <p class="langCng" lang="EN"><a href="https://linecorp.com/en" target="_blank">LINE Corp</a>, Tokyo, 2 months, Full-time internship</p>
+                    <p class="langCng" lang="JP"><a href="https://linecorp.com" target="_blank">LINE Corp</a>, 東京, 2ヶ月, フルタイムインターンシップ</p>
+                    <p class="langCng" lang="EN">
+                        I developed a distributed processing system using task queues.<br>
+                        Please see the attached technical blog for details.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        サーバーサイドエンジニアのインターンにて、タスクキュー（Redis）を用いた分散処理システムを構築しました。<br>
+                        内容詳細については下記技術ブログをご覧ください。
+                    </p>
+                    <p>Tech Blog : <a href="https://engineering.linecorp.com/ja/blog/internship2021-task-queue" target="_blank">【インターンレポート】タスクキューを用いたタイムラプス作成等の高負荷な処理の高速化</a></p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_fixstars.png" alt="Experience Icon">
+                  <div>
+                    <h3>Software Engineer Internship / Part-time-job (Jan. 2021 - Jul. 2021)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.fixstars.com/en" target="_blank">Fixstars Solutions</a>, Tokyo, 6 months, Full-time internship and part-time-job</p>
+                    <p class="langCng" lang="JP"><a href="https://www.fixstars.com" target="_blank">Fixstars Solutions</a>, 東京, 6ヶ月, フルタイムインターンシップ / アルバイト</p>
+                    <p class="langCng" lang="EN">
+                        I worked part-time in research and development related to deep learning after a 3-weeks full-time internship.<br>
+                        In order to improve the accuracy and inference speed of image recognition with deep learning, I investigated and evaluated various models.<br>
+                        In particular, I conducted research on ML compilers in my part-time job.
+                    </p>
+                    <p class="langCng" lang="JP">
+                        3週間フルタイムのインターンシップを行ったのち、アルバイトとして深層学習に関連する研究開発に携わりました。<br>
+                        深層学習による画像認識の精度と推論速度を高めるために、様々な学習モデルの検討や評価を行いました。<br>
+                        特にアルバイトではMLコンパイラに関する調査を行いました。
+                    </p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_flywheel.png" alt="Experience Icon">
+                  <div>
+                    <h3>Software Engineer Internship (Aug. 2020 - Oct. 2020)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.flywheel.jp" target="_blank">FLYWHEEL Inc.</a>, Tokyo, 2 months, Full-time internship</p>
+                    <p class="langCng" lang="JP"><a href="https://www.flywheel.jp" target="_blank">FLYWHEEL Inc.</a>, 東京, 2ヶ月, フルタイムインターンシップ</p>
+                    <p class="langCng" lang="EN">As a data infrastructure engineer, I was involved in the development of a data extraction flow on the web and the construction of a data flow pipeline to format and process the huge daily flow of data and store it in object storage.</p>
+                    <p class="langCng" lang="JP">Web上のデータ抽出フローや、毎日膨大に流れてくるデータを整形処理してオブジェクトストレージに保存するデータフローパイプラインの構築など、データインフラエンジニアとして開発に携わりました。</p>
+                    <p>Interview Blog : <a href="https://www.flywheel.jp/topics/20201020" target="_blank">FLYWHEEL Summer Internship 2020 Vol.2</a></p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_ibm.jpg" alt="Experience Icon">
+                  <div>
+                    <h3>IT Consultant Internship (Sep. 2019/2021)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.ibm.com/jp-ja" target="_blank">IBM</a>, Tokyo, 1 week, internship</p>
+                    <p class="langCng" lang="JP"><a href="https://www.ibm.com/jp-ja" target="_blank">IBM</a>, 東京, 1週間, インターンシップ</p>
+                    <p class="langCng" lang="EN">In 2019, I was a Developer in a scrum development team of 6 people, where I proposed app features, created UI, and implemented features. In 2021, I was the Product Owner position, leading the team by designing the app, designing it, and subdividing tasks.</p>
+                    <p class="langCng" lang="JP">2019年には6人チームでのスクラム開発にてDeveloperポジションとして、アプリ機能の提案やUIの作成、機能の実装をしました。2021年にはProduct Ownerポジションとして、アプリ設計からデザイン、タスクの細分化など、チームリードを行いました。</p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/experience/icon_teamlab.png" alt="Experience Icon">
+                  <div>
+                    <h3>Software Engineer Internship (Aug. 2019)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.team-lab.com" target="_blank">teamLab</a>, Tokyo, 2 weeks, Full-time internship</p>
+                    <p class="langCng" lang="JP"><a href="https://www.team-lab.com" target="_blank">teamLab</a>, 東京, 2週間, フルタイムインターンシップ</p>
+                    <p class="langCng" lang="EN">I designed and developed a web application (for demonstration purposes) using NoSQL database for high-speed data retrieval.</p>
+                    <p class="langCng" lang="JP">NoSQL databaseを用いた高速なデータ検索を用いたWebアプリケーション(デモ用)の設計、開発をしました。</p>
+                  </div>
+                </div>
+        </div>
+      </section>
+      
+      <section class="section" id="research">
+        <h2>Research (Publications and Presentations)</h2>
+        <div class="grid">
+                <div class="item">
+                  <div>
+                    <h3><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Nakamura_Pre-training_Vision_Transformers_with_Very_Limited_Synthesized_Images_ICCV_2023_paper.pdf" target="_blank">Pre-training Vision Transformers with Very Limited Synthesized Images</a></h3>
+                    <p class="langCng" lang="EN">Ryo Nakamura, Hirokatsu Kataoka, <b>Sora Takashima</b>, Edgar Josafat Martinez Noriega, Rio Yokota and Nakamasa Inoue, Peer-reviewed paper, <br>IEEE/CVF International Conference on Computer Vision (<b>ICCV 2023</b>) (<b><span style="color: #ff0000;">Accept rate: 26.2 %</span></b>). <br><a href="https://ryoo-nakamura.github.io/One-instance-FractalDB/" target="_blank">project page</a></p>
+                    <p class="langCng" lang="JP">Ryo Nakamura, Hirokatsu Kataoka, <b>Sora Takashima</b>, Edgar Josafat Martinez Noriega, Rio Yokota and Nakamasa Inoue, 国際査読付き, <br>IEEE/CVF International Conference on Computer Vision (<b>ICCV 2023</b>) (<b><span style="color: #ff0000;">採択率: 26.2 %</span></b>). <br><a href="https://ryoo-nakamura.github.io/One-instance-FractalDB/" target="_blank">プロジェクトページ</a></p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <div>
+                    <h3><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Takashima_Visual_Atoms_Pre-Training_Vision_Transformers_With_Sinusoidal_Waves_CVPR_2023_paper.pdf" target="_blank">Visual Atoms: Pre-training Vision Transformers with Sinusoidal Waves</a></h3>
+                    <p class="langCng" lang="EN"><b>Sora Takashima</b>, Ryo Hayamizu, Hirokatsu Kataoka, Nakamasa Inoue, and Rio Yokota, Peer-reviewed paper, <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2023</b>) (<b><span style="color: #ff0000;">Accept rate: 25.8 %</span></b>). <br><a href="https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/" target="_blank">project page</a></p>
+                    <p class="langCng" lang="JP"><b>Sora Takashima</b>, Ryo Hayamizu, Hirokatsu Kataoka, Nakamasa Inoue, and Rio Yokota, 国際査読付き, <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2023</b>) (<b><span style="color: #ff0000;">採択率: 25.8 %</span></b>). <br><a href="https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/" target="_blank">プロジェクトページ</a></p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <div>
+                    <h3><a href="https://www.slideshare.net/cvpaperchallenge/foundation-models" target="_blank">【メタサーベイ】基盤モデル / Foundation Models</a></h3>
+                    <p class="langCng" lang="EN"><b>高島 空良</b>, 中村 凌, 山田 亮佑, and 片岡 裕雄, Presentation material, Cvpaper.Challenge Conference Summer (<b>CCCS 2022</b>).</p>
+                    <p class="langCng" lang="JP"><b>高島 空良</b>, 中村 凌, 山田 亮佑, and 片岡 裕雄, 講演資料, Cvpaper.Challenge Conference Summer (<b>CCCS 2022</b>).</p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <div>
+                    <h3 class="langCng" lang="EN"><a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_4O1GS404/_article/-char/en" target="_blank">Hybrid POI Search Combining Geographical Features and Deep Metric Learning-based Semantic Similarity</a></h3>
+                    <h3 class="langCng" lang="JP"><a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_4O1GS404/_article/-char/ja" target="_blank">地理的距離等の数値情報と深層距離学習に基づく意味的類似度を用いた拠点検索</a></h3>
+                    <p class="langCng" lang="EN">Yusuke Okimoto, <b>Sora Takashima</b>, Kenta Kanamori, Xinhu Lan, and Junji Saikawa, Non-peer-reviewed paper, Japanese Society for Artificial Intelligence (<b>JSAI 2022</b>).</p>
+                    <p class="langCng" lang="JP">沖本 祐典, <b>高島 空良</b>, 金森 研太, 蘭 心湖, 宰川 潤二, 国内査読なし, Japanese Society for Artificial Intelligence (<b>JSAI 2022</b>).</p>
+                  </div>
+                </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <div>
+                    <h3><a href="https://openaccess.thecvf.com/content/CVPR2022/html/Kataoka_Replacing_Labeled_Real-Image_Datasets_With_Auto-Generated_Contours_CVPR_2022_paper.html" target="_blank">Replacing Labeled Real-Image Datasets With Auto-Generated Contours</a></h3>
+                    <p class="langCng" lang="EN">Hirokatsu Kataoka, Ryo Hayamizu, Ryosuke Yamada, Kodai Nakashima, <b>Sora Takashima</b>, Xinyu Zhang, Edgar Josafat Martinez-Noriega, Nakamasa Inoue, and Rio Yokota, Peer-reviewed paper, <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2022</b>) (<b><span style="color: #ff0000;">Accept rate: 25.3 %</span></b>). <br><a href="https://hirokatsukataoka16.github.io/Replacing-Labeled-Real-Image-Datasets/" target="_blank">project page</a></p>
+                    <p class="langCng" lang="JP">Hirokatsu Kataoka, Ryo Hayamizu, Ryosuke Yamada, Kodai Nakashima, <b>Sora Takashima</b>, Xinyu Zhang, Edgar Josafat Martinez-Noriega, Nakamasa Inoue, and Rio Yokota, 国際査読付き, <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2022</b>) (<b><span style="color: #ff0000;">採択率: 25.3 %</span></b>). <br><a href="https://hirokatsukataoka16.github.io/Replacing-Labeled-Real-Image-Datasets/" target="_blank">プロジェクトページ</a></p>
+                  </div>
+                </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <h2>Educational Background</h2>
+        <div class="grid">
+          <!-- Add more items as needed -->
+          <div class="item">
+            <img src="static/img/education/icon_tech.jpg" alt="Education Icon">
+            <div>
+              <h3 class="langCng" lang="EN">Master of Engineering in Computer Science (Apr. 2021 - Mar. 2023)</h3>
+              <h3 class="langCng" lang="JP">修士課程（情報理工学院 情報工学系） (Apr. 2021 - Mar. 2023)</h3>
+              <p class="langCng" lang="EN"><a href="https://www.titech.ac.jp" target="_blank">Tokyo Institute of Technology</a>, Tokyo</p>
+              <p class="langCng" lang="JP"><a href="https://www.titech.ac.jp" target="_blank">東京工業大学大学院</a></p>
+              <p class="langCng" lang="EN">Advisor : <a href="https://www.rio.gsic.titech.ac.jp" target="_blank">Prof. Rio Yokota</a></p>
+              <p class="langCng" lang="JP">指導教員 : <a href="https://www.rio.gsic.titech.ac.jp" target="_blank">横田理央 教授</a></p>
+              <p>GPA : 3.52</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/education/icon_tech.jpg" alt="Education Icon">
+                  <div>
+                    <h3 class="langCng" lang="EN">Bachelor of Engineering in Computer Science (Apr. 2017 - Mar. 2021)</h3>
+                    <h3 class="langCng" lang="JP">学士課程（情報理工学院 情報工学系） (Apr. 2017 - Mar. 2021)</h3>
+                    <p class="langCng" lang="EN"><a href="https://www.titech.ac.jp" target="_blank">Tokyo Institute of Technology</a>, Tokyo</p>
+                    <p class="langCng" lang="JP"><a href="https://www.titech.ac.jp" target="_blank">東京工業大学大</a></p>
+                    <p class="langCng" lang="EN">Advisor : <a href="https://www.rio.gsic.titech.ac.jp" target="_blank">Prof. Rio Yokota</a></p>
+                    <p class="langCng" lang="JP">指導教員 : <a href="https://www.rio.gsic.titech.ac.jp" target="_blank">横田理央 教授</a></p>
+                    <p>GPA : 3.50</p>
+                    <p class="langCng" lang="EN">Student groups : <a href="https://www.t-scitech.net/" target="_blank">ScienceTechno (scitech)</a>, tea ceremony club</p>
+                    <p class="langCng" lang="JP">サークル/部活動 : <a href="https://www.t-scitech.net/" target="_blank">東工大ScienceTechno (サイテク)</a>, 茶道部</p>
+                  </div>
+                </div>
+        </div>
+      </section>
+
+      <section class="section" id="works">
+        <h2>Works</h2>
+        <div class="grid">
+                <div class="item">
+                  <img src="static/img/myworks/icon_pypi.png" alt="Work Icon">
+                  <div>
+                    <h3>Eigoyurusan</h3>
+                    <p class="langCng" lang="EN">This is a Python CLI application that automatically translates any PDF of English paper using DeepL and displays PDF in the browser with a table of contents. (Currently not maintenanced).</p>
+                    <p class="langCng" lang="JP">英語論文のPDFをDeepLで翻訳した後、章ごとに整形して目次付きでブラウザ上に表示できる、PythonのCLIアプリケーションです。(現在動作未確認)</p>
+                    <p>[<a href="https://github.com/masora1030/eigoyurusan" target="_blank">GitHub</a>] [<a href="https://pypi.org/project/eigoyurusan" target="_blank">PyPI</a>] [<a href="https://twitter.com/soraemonpockts/status/1283668697354080258?s=20" target="_blank">demo video</a>]</p>
+                  </div>
+                </div>
+        </div>
+        <!-- <div class="grid">
+            <div class="item">
+              <img src="static/img/myworks/icon_myself.png" alt="Work Icon">
+              <div>
+                <h3 class="langCng" lang="EN"><a href="https://masora1030.github.io/soraemonpockt">This portfolio site</a></h3>
+                <h3 class="langCng" lang="JP"><a href="https://masora1030.github.io/soraemonpockt">ポートフォリオサイト</a></h3>
+                <p class="langCng" lang="EN">This portfolio site is based on a HTML and CSS template generated by <a href="https://openai.com/blog/chatgpt" target="_blank">chatGPT</a> (<a href="https://openai.com/product/gpt-4" target="_blank">GPT-4</a>).</p>
+                <p class="langCng" lang="JP">このポートフォリオサイトは、<a href="https://openai.com/blog/chatgpt" target="_blank">chatGPT</a> (<a href="https://openai.com/product/gpt-4" target="_blank">GPT-4</a>)が生成出力したHTML・CSSのテンプレートに基づいて作成されています。</p>
+              </div>
+            </div>
+        </div> -->
+      </section>
+      
+      <section class="section" id="contact">
+        <h2>Contact Information</h2>
+        <div class="contact-grid">
+          <!-- Add more items as needed -->
+          <div class="circle">
+            <a class="contact-link" href="https://twitter.com/soraemonpockts" target="_blank">
+              <img src="static/img/contact/icon_tw.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="https://www.facebook.com/soraemonpockt" target="_blank">
+              <img src="static/img/contact/icon_fb.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="https://github.com/masora1030" target="_blank">
+              <img src="static/img/contact/icon_gh.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="https://www.linkedin.com/in/sora-takashima" target="_blank">
+              <img src="static/img/contact/icon_li.png" alt="Email Icon">
+            </a>
+          </div>
+          <div class="circle">
+            <a class="contact-link" href="mailto:soraemonpockt@rio.gsic.titech.ac.jp" target="_blank">
+              <img src="static/img/contact/mail_icon.png" alt="Email Icon">
+            </a>
+          </div>
+          <!-- Add more contact items here -->
+        </div>
+      </section>
+  </div>
+<button class="scroll-to-top" onclick="scrollToTop()">Top</button>
+<button class="language-toggle" onclick="toggleLanguage()">EN</button>
+
+<script>
+
+window.onload = function() {
+    var button = document.querySelector('.language-toggle');
+    var currentLanguage = button.textContent;
+    langSet(currentLanguage);
+  }
+
+  function langSet(argLang) {
+    var elm = document.getElementsByClassName('langCng');
+    for (var i = 0; i < elm.length; i++) {
+        if(elm[i].getAttribute('lang') == argLang){
+            elm[i].style.display = '';
+        }
+        else{
+            elm[i].style.display = 'none';
+        }
+    }
+  }
+
+  function toggleLanguage() {
+            const button = document.querySelector('.language-toggle');
+            const currentLanguage = button.textContent;
+        
+            if (currentLanguage === 'EN') {
+              button.textContent = 'JP';
+              // Add functionality to switch the content to Japanese
+            } else {
+              button.textContent = 'EN';
+              // Add functionality to switch the content back to English
+            }
+
+            langSet(button.textContent)
+        }
+        function moveProfileImage() {
+            const profileImage = document.querySelector('header img');
+            const randomX = Math.floor(Math.random() * 100) - 50;
+            const randomY = Math.floor(Math.random() * 100) - 50;
+            const randomRotation = Math.floor(Math.random() * 360);
+            profileImage.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
+        }
+
+        function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('active');
+  }
+
+  function scrollToSectionSmoothly(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+    toggleMenu();
+  }
+
+  document.addEventListener('scroll', () => {
+    const scrollTopButton = document.querySelector('.scroll-to-top');
+    if (window.scrollY > 200) {
+      scrollTopButton.classList.add('active');
+    } else {
+      scrollTopButton.classList.remove('active');
+    }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+    behavior: 'smooth'
+  });
+});
+
+});
+</script>
+
+</body>
+</html>

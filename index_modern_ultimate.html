@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sora Takashima - Portfolio</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sora Takashima Portfolio">
+    <meta property="og:url" content="https://masora1030.github.io/soraemonpockt/">
+    <meta property="og:description" content="Machine Learning Engineer & Researcher Portfolio">
+    <meta property="og:image" content="static/img/bosssub.png">
+    <link rel="shortcut icon" href="static/img/self.png">
+    <link rel="canonical" href="https://masora1030.github.io/soraemonpockt/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/modern-style-ultimate.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+    
+    <!-- Floating Background Elements -->
+    <div class="floating-bg">
+        <div class="floating-element" data-speed="0.5">💫</div>
+        <div class="floating-element" data-speed="0.8">🚀</div>
+        <div class="floating-element" data-speed="0.3">⭐</div>
+        <div class="floating-element" data-speed="0.6">🌟</div>
+        <div class="floating-element" data-speed="0.4">✨</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">ST</span>
+                <div class="logo-pulse"></div>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link" data-section="hero">
+                        <span>Home</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">
+                        <span>About</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <span>Experience</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link" data-section="research">
+                        <span>Research</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#game" class="nav-link" data-section="game">
+                        <span>Game</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">
+                        <span>Contact</span>
+                        <div class="nav-line"></div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <img src="static/img/about/profile.jpg" alt="Sora Takashima" class="profile-img">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="greeting-emoji">👋</span>
+                        <span class="greeting-text">
+                            <span class="lang-en">Hello, I'm</span>
+                            <span class="lang-ja">こんにちは、私は</span>
+                        </span>
+                    </div>
+                    
+                    <h1 class="hero-name">
+                        <span class="name-part">Sora</span>
+                        <span class="name-part">Takashima</span>
+                    </h1>
+                    
+                    <div class="hero-title">
+                        <div class="typewriter">
+                            <span class="typewriter-text">Machine Learning Engineer</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-description">
+                        <p class="lang-en">
+                            Thank you for viewing my portfolio site!<br>
+                            I am Sora Takashima, currently working as a NLP machine learning engineer.<br>
+                            I have completed my master's degree at <a href="https://www.rio.gsic.titech.ac.jp/jp/index.html" target="_blank">YOKOTA Lab.</a> in <a href="https://www.titech.ac.jp" target="_blank">Tokyo Institute of Technology</a>.<br>
+                            My research interests include large-scale distributed learning with supercomputing and computer vision.<br>
+                            I am also playing competitive programming (<a href="https://atcoder.jp/users/Skygood" target="_blank">AtCoder profile</a>, <a href="https://codeforces.com/profile/soraemonpockt" target="_blank">Codeforces profile</a>) as hobbies.
+                        </p>
+                        <p class="lang-ja">
+                            こんにちは！<br>
+                            私は現在、自然言語処理を扱う機械学習エンジニアとして働いている、高島空良（タカシマ ソラ）と申します。<br>
+                            修士課程では、スパコンを用いた大規模分散深層学習や画像認識についての研究に従事していました。<br>
+                            趣味で少しだけ競技プログラミング(<a href="https://atcoder.jp/users/Skygood" target="_blank">AtCoder profile</a>, <a href="https://codeforces.com/profile/soraemonpockt" target="_blank">Codeforces profile</a>)を嗜んでいます。
+                        </p>
+                    </div>
+                    
+                    <div class="hero-cta">
+                        <button class="cta-primary" onclick="scrollToSection('about')">
+                            <span class="cta-text">
+                                <span class="lang-en">Explore My Work</span>
+                                <span class="lang-ja">私の仕事を見る</span>
+                            </span>
+                            <div class="cta-arrow">→</div>
+                        </button>
+                        <button class="cta-secondary" onclick="scrollToSection('game')">
+                            <span class="cta-text">
+                                <span class="lang-en">Play Game</span>
+                                <span class="lang-ja">ゲームで遊ぶ</span>
+                            </span>
+                            <div class="cta-icon">🎮</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-text">
+                    <span class="lang-en">Scroll to explore</span>
+                    <span class="lang-ja">スクロールして探索</span>
+                </div>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">About Me</span>
+                    <span class="lang-ja">自己紹介</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3>
+                            <span class="lang-en">Background</span>
+                            <span class="lang-ja">経歴</span>
+                        </h3>
+                        <p class="lang-en">
+                            I am currently working as a NLP machine learning engineer at LY Corporation. I completed my master's degree at YOKOTA Lab. in Tokyo Institute of Technology, where I researched large-scale distributed learning with supercomputing and computer vision.
+                        </p>
+                        <p class="lang-ja">
+                            現在、LINEヤフーで自然言語処理を扱う機械学習エンジニアとして働いています。東京工業大学の横田研究室で修士課程を修了し、スパコンを用いた大規模分散深層学習と画像認識の研究に従事していました。
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h3>
+                            <span class="lang-en">Interests</span>
+                            <span class="lang-ja">趣味</span>
+                        </h3>
+                        <p class="lang-en">
+                            Beyond work, I enjoy competitive programming as a hobby. You can find my profiles on AtCoder and Codeforces. I'm passionate about solving algorithmic challenges and continuously improving my problem-solving skills.
+                        </p>
+                        <p class="lang-ja">
+                            仕事以外では、趣味で競技プログラミングを楽しんでいます。AtCoderやCodeforcesで活動しており、アルゴリズムの課題を解くことや問題解決スキルの向上に情熱を注いでいます。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>
+                            <span class="lang-en">Machine Learning</span>
+                            <span class="lang-ja">機械学習</span>
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>
+                            <span class="lang-en">Programming</span>
+                            <span class="lang-ja">プログラミング</span>
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>
+                            <span class="lang-en">Infrastructure</span>
+                            <span class="lang-ja">インフラ</span>
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">GCP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">Experience</span>
+                    <span class="lang-ja">経歴</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="experience-grid">
+                <!-- LY Corporation -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_ly.png" alt="LY Corporation">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">Machine Learning Engineer</h3>
+                            <h4 class="company-name">
+                                <span class="lang-en">LY Corporation</span>
+                                <span class="lang-ja">LINEヤフー</span>
+                            </h4>
+                            <p class="job-period">April 2023 - Present</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            As a machine learning engineer, working to improve the quality of location search using neural search technology.
+                        </p>
+                        <p class="lang-ja">
+                            機械学習エンジニアとして、ユーザーのWeb検索クエリに対して掲示する拠点情報のカバレッジと精度を高めるプロジェクトに従事しています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- AIST -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_aist.jpeg" alt="AIST">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">Research Assistant</h3>
+                            <h4 class="company-name">
+                                <span class="lang-en">AIST</span>
+                                <span class="lang-ja">産業技術総合研究所</span>
+                            </h4>
+                            <p class="job-period">April 2021 - March 2023</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            I worked as a Research Assistant at the <a href="https://www.digiarc.aist.go.jp/en" target="_blank">Digital Architecture Research Center (DigiARC)</a>.<br>
+                            I researched primarily about computer vision and large-scale deep learning.
+                        </p>
+                        <p class="lang-ja">
+                            <a href="https://www.digiarc.aist.go.jp/en" target="_blank">Digital Architecture Research Center (DigiARC)</a>にリサーチアシスタントとして所属し研究に従事していました。<br>
+                            主な研究分野は大規模分散深層学習と画像認識です。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NTT DATA -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_nttdata.png" alt="NTT DATA">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">R&D Internship</h3>
+                            <h4 class="company-name">NTT DATA</h4>
+                            <p class="job-period">February 2022</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            I engaged in improving the accuracy of the object detection task for illustration images.
+                        </p>
+                        <p class="lang-ja">
+                            研究開発インターンシップにて、イラスト画像の物体検出タスクの精度改善に取り組みました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Yahoo! Japan -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_yahoo.png" alt="Yahoo! Japan">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">R&D Internship</h3>
+                            <h4 class="company-name">Yahoo! Japan</h4>
+                            <p class="job-period">October 2021 - November 2021</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            For reranking learning when searching for locations, I examined and evaluated ways to improve accuracy by introducing neural search technology, etc.
+                        </p>
+                        <p class="lang-ja">
+                            研究開発インターンシップにて、拠点検索を行う際のリランキング学習に対して、ニューラル検索技術導入などによる精度向上を検討し評価しました。
+                        </p>
+                        <div class="experience-links">
+                            <a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_4O1GS404/_article/-char/en" target="_blank" class="experience-link">
+                                <span class="lang-en">Submitted Paper</span>
+                                <span class="lang-ja">成果が含まれる共著論文</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sony -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/sony_icon.jpeg" alt="Sony">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">R&D Internship</h3>
+                            <h4 class="company-name">Sony | R&D</h4>
+                            <p class="job-period">September 2021 - October 2021</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            I investigated deep learning methods for domain generalization for image classification of cross-domain pathological image datasets.
+                        </p>
+                        <p class="lang-ja">
+                            研究開発インターンシップにて、クロスドメインな病理画像データセットの画像分類を行う深層学習タスクに対して、ドメイン汎化する学習手法の検討を行いました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LINE Corp -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_line.png" alt="LINE Corp">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">Software Engineer Internship</h3>
+                            <h4 class="company-name">LINE Corp</h4>
+                            <p class="job-period">August 2021 - September 2021</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            I developed a distributed processing system using task queues.<br>
+                            Please see the attached technical blog for details.
+                        </p>
+                        <p class="lang-ja">
+                            サーバーサイドエンジニアのインターンにて、タスクキュー（Redis）を用いた分散処理システムを構築しました。<br>
+                            内容詳細については下記技術ブログをご覧ください。
+                        </p>
+                        <div class="experience-links">
+                            <a href="https://engineering.linecorp.com/ja/blog/internship2021-task-queue" target="_blank" class="experience-link">Tech Blog</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fixstars Solutions -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_fixstars.png" alt="Fixstars Solutions">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">Software Engineer Internship / Part-time-job</h3>
+                            <h4 class="company-name">Fixstars Solutions</h4>
+                            <p class="job-period">January 2021 - July 2021</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            I worked part-time in research and development related to deep learning after a 3-weeks full-time internship.<br>
+                            In order to improve the accuracy and inference speed of image recognition with deep learning, I investigated and evaluated various models.<br>
+                            In particular, I conducted research on ML compilers in my part-time job.
+                        </p>
+                        <p class="lang-ja">
+                            3週間フルタイムのインターンシップを行ったのち、アルバイトとして深層学習に関連する研究開発に携わりました。<br>
+                            深層学習による画像認識の精度と推論速度を高めるために、様々な学習モデルの検討や評価を行いました。<br>
+                            特にアルバイトではMLコンパイラに関する調査を行いました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FLYWHEEL Inc. -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_flywheel.png" alt="FLYWHEEL Inc.">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">Software Engineer Internship</h3>
+                            <h4 class="company-name">FLYWHEEL Inc.</h4>
+                            <p class="job-period">August 2020 - October 2020</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            As a data infrastructure engineer, I was involved in the development of a data extraction flow on the web and the construction of a data flow pipeline to format and process the huge daily flow of data and store it in object storage.
+                        </p>
+                        <p class="lang-ja">
+                            Web上のデータ抽出フローや、毎日膨大に流れてくるデータを整形処理してオブジェクトストレージに保存するデータフローパイプラインの構築など、データインフラエンジニアとして開発に携わりました。
+                        </p>
+                        <div class="experience-links">
+                            <a href="https://www.flywheel.jp/topics/20201020" target="_blank" class="experience-link">Interview Blog</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IBM -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_ibm.jpg" alt="IBM">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">IT Consultant Internship</h3>
+                            <h4 class="company-name">IBM</h4>
+                            <p class="job-period">September 2019/2021</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            In 2019, I was a Developer in a scrum development team of 6 people, where I proposed app features, created UI, and implemented features. In 2021, I was the Product Owner position, leading the team by designing the app, designing it, and subdividing tasks.
+                        </p>
+                        <p class="lang-ja">
+                            2019年には6人チームでのスクラム開発にてDeveloperポジションとして、アプリ機能の提案やUIの作成、機能の実装をしました。2021年にはProduct Ownerポジションとして、アプリ設計からデザイン、タスクの細分化など、チームリードを行いました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- teamLab -->
+                <div class="experience-card" onclick="toggleExperience(this)">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="static/img/experience/icon_teamlab.png" alt="teamLab">
+                        </div>
+                        <div class="experience-summary">
+                            <h3 class="job-title">Software Engineer Internship</h3>
+                            <h4 class="company-name">teamLab</h4>
+                            <p class="job-period">August 2019</p>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="experience-details">
+                        <p class="lang-en">
+                            I designed and developed a web application (for demonstration purposes) using NoSQL database for high-speed data retrieval.
+                        </p>
+                        <p class="lang-ja">
+                            NoSQL databaseを用いた高速なデータ検索を用いたWebアプリケーション(デモ用)の設計、開発をしました。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">Research & Publications</span>
+                    <span class="lang-ja">研究・論文</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="research-grid">
+                <div class="research-item featured">
+                    <div class="research-badge">ICCV 2023</div>
+                    <h3 class="research-title">Pre-training Vision Transformers with Very Limited Synthesized Images</h3>
+                    <p class="research-authors">Ryo Nakamura, Hirokatsu Kataoka, <strong>Sora Takashima</strong>, Edgar Josafat Martinez Noriega, Rio Yokota and Nakamasa Inoue</p>
+                    <p class="research-venue">IEEE/CVF International Conference on Computer Vision (ICCV 2023)</p>
+                    <p class="research-stats">
+                        <span class="lang-en">Accept rate: 26.2%</span>
+                        <span class="lang-ja">採択率: 26.2%</span>
+                    </p>
+                    <div class="research-links">
+                        <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Nakamura_Pre-training_Vision_Transformers_with_Very_Limited_Synthesized_Images_ICCV_2023_paper.pdf" class="research-link" target="_blank">Paper</a>
+                        <a href="https://ryoo-nakamura.github.io/One-instance-FractalDB/" class="research-link" target="_blank">
+                            <span class="lang-en">Project</span>
+                            <span class="lang-ja">プロジェクトページ</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="research-item featured">
+                    <div class="research-badge">CVPR 2023</div>
+                    <h3 class="research-title">Visual Atoms: Pre-training Vision Transformers with Sinusoidal Waves</h3>
+                    <p class="research-authors"><strong>Sora Takashima</strong>, Ryo Hayamizu, Hirokatsu Kataoka, Nakamasa Inoue, and Rio Yokota</p>
+                    <p class="research-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2023)</p>
+                    <p class="research-stats">
+                        <span class="lang-en">Accept rate: 25.8%</span>
+                        <span class="lang-ja">採択率: 25.8%</span>
+                    </p>
+                    <div class="research-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Takashima_Visual_Atoms_Pre-Training_Vision_Transformers_With_Sinusoidal_Waves_CVPR_2023_paper.pdf" class="research-link" target="_blank">Paper</a>
+                        <a href="https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/" class="research-link" target="_blank">
+                            <span class="lang-en">Project</span>
+                            <span class="lang-ja">プロジェクトページ</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="research-item">
+                    <div class="research-badge">CCCS 2022</div>
+                    <h3 class="research-title">
+                        <span class="lang-en">Meta-Survey: Foundation Models</span>
+                        <span class="lang-ja">【メタサーベイ】基盤モデル / Foundation Models</span>
+                    </h3>
+                    <p class="research-authors">
+                        <span class="lang-en"><strong>Sora Takashima</strong>, Ryo Nakamura, Ryosuke Yamada, and Hirokatsu Kataoka</span>
+                        <span class="lang-ja"><strong>高島 空良</strong>, 中村 凌, 山田 亮佑, and 片岡 裕雄</span>
+                    </p>
+                    <p class="research-venue">Cvpaper.Challenge Conference Summer (CCCS 2022)</p>
+                    <div class="research-links">
+                        <a href="https://www.slideshare.net/cvpaperchallenge/foundation-models" class="research-link" target="_blank">
+                            <span class="lang-en">Presentation</span>
+                            <span class="lang-ja">講演資料</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="research-item">
+                    <div class="research-badge">CVPR 2022</div>
+                    <h3 class="research-title">Replacing Labeled Real-Image Datasets With Auto-Generated Contours</h3>
+                    <p class="research-authors">Hirokatsu Kataoka, Ryo Hayamizu, Ryosuke Yamada, Kodai Nakashima, <strong>Sora Takashima</strong>, et al.</p>
+                    <p class="research-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2022)</p>
+                    <div class="research-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Kataoka_Replacing_Labeled_Real-Image_Datasets_With_Auto-Generated_Contours_CVPR_2022_paper.html" class="research-link" target="_blank">Paper</a>
+                        <a href="https://hirokatsukataoka16.github.io/Replacing-Labeled-Real-Image-Datasets/" class="research-link" target="_blank">
+                            <span class="lang-en">Project</span>
+                            <span class="lang-ja">プロジェクトページ</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-badge">JSAI 2022</div>
+                    <h3 class="research-title">
+                        <span class="lang-en">Hybrid POI Search Combining Geographical Features and Deep Metric Learning-based Semantic Similarity</span>
+                        <span class="lang-ja">地理的距離等の数値情報と深層距離学習に基づく意味的類似度を用いた拠点検索</span>
+                    </h3>
+                    <p class="research-authors">
+                        <span class="lang-en">Yusuke Okimoto, <strong>Sora Takashima</strong>, Kenta Kanamori, Xinhu Lan, and Junji Saikawa</span>
+                        <span class="lang-ja">沖本 祐典, <strong>高島 空良</strong>, 金森 研太, 蘭 心湖, 宰川 潤二</span>
+                    </p>
+                    <p class="research-venue">Japanese Society for Artificial Intelligence (JSAI 2022)</p>
+                    <div class="research-links">
+                        <a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_4O1GS404/_article/-char/en" class="research-link" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="game-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">🎮 Epic Code Adventure</span>
+                    <span class="lang-ja">🎮 エピック・コード・アドベンチャー</span>
+                </h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">
+                    <span class="lang-en">Embark on a coding journey through my career! Battle bugs, collect achievements, and discover easter eggs!</span>
+                    <span class="lang-ja">私のキャリアを巡るコーディングの旅に出よう！バグと戦い、実績を集め、イースターエッグを発見しよう！</span>
+                </p>
+            </div>
+            
+            <div class="game-container">
+                <div class="game-info">
+                    <h3>
+                        <span class="lang-en">🚀 Career Quest</span>
+                        <span class="lang-ja">🚀 キャリア・クエスト</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Navigate through my professional journey as a brave developer! Each level represents a different company I've worked at. Defeat coding challenges, collect skill points, and unlock achievements!</span>
+                        <span class="lang-ja">勇敢な開発者として私のプロフェッショナルな旅を進もう！各レベルは私が働いた異なる会社を表しています。コーディングチャレンジを攻略し、スキルポイントを集め、実績をアンロックしよう！</span>
+                    </p>
+                    
+                    <div class="game-controls">
+                        <div class="control-group">
+                            <h4>
+                                <span class="lang-en">🎯 Controls</span>
+                                <span class="lang-ja">🎯 操作方法</span>
+                            </h4>
+                            <div class="control-item">
+                                <span class="key">Arrow Keys</span>
+                                <span>
+                                    <span class="lang-en">Move your character</span>
+                                    <span class="lang-ja">キャラクター移動</span>
+                                </span>
+                            </div>
+                            <div class="control-item">
+                                <span class="key">Space</span>
+                                <span>
+                                    <span class="lang-en">Deploy code / Attack bugs</span>
+                                    <span class="lang-ja">コード実行 / バグ攻撃</span>
+                                </span>
+                            </div>
+                            <div class="control-item">
+                                <span class="key">Enter</span>
+                                <span>
+                                    <span class="lang-en">Interact / Collect</span>
+                                    <span class="lang-ja">アクション / 収集</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="game-modes">
+                            <button class="mode-btn active" data-mode="intern" onclick="setGameMode('intern')">
+                                <span class="lang-en">🎓 Intern Mode</span>
+                                <span class="lang-ja">🎓 インターン</span>
+                            </button>
+                            <button class="mode-btn" data-mode="senior" onclick="setGameMode('senior')">
+                                <span class="lang-en">👨‍💻 Senior Dev</span>
+                                <span class="lang-ja">👨‍💻 シニア開発者</span>
+                            </button>
+                            <button class="mode-btn" data-mode="legend" onclick="setGameMode('legend')">
+                                <span class="lang-en">🏆 Legend</span>
+                                <span class="lang-ja">🏆 レジェンド</span>
+                            </button>
+                        </div>
+                        
+                        <button class="start-game-btn" onclick="startEpicGame()">
+                            <span class="lang-en">🚀 Start Epic Journey</span>
+                            <span class="lang-ja">🚀 エピック・ジャーニー開始</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="game-canvas-container">
+                    <canvas id="game-canvas" width="800" height="500"></canvas>
+                    <div class="game-ui">
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">
+                                    <span class="lang-en">Level</span>
+                                    <span class="lang-ja">レベル</span>
+                                </span>
+                                <span class="stat-value" id="game-level">1</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">
+                                    <span class="lang-en">Score</span>
+                                    <span class="lang-ja">スコア</span>
+                                </span>
+                                <span class="stat-value" id="game-score">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">
+                                    <span class="lang-en">Skills</span>
+                                    <span class="lang-ja">スキル</span>
+                                </span>
+                                <span class="stat-value" id="game-skills">0</span>
+                            </div>
+                        </div>
+                        <div class="game-message" id="game-message">
+                            <span class="lang-en">Welcome to Epic Code Adventure!</span>
+                            <span class="lang-ja">エピック・コード・アドベンチャーへようこそ！</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-en">Let's Connect</span>
+                    <span class="lang-ja">お気軽にご連絡ください</span>
+                </h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">
+                    <span class="lang-en">I'm always interested in new opportunities and collaborations</span>
+                    <span class="lang-ja">新しい機会やコラボレーションにいつでも興味があります</span>
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:soraemonpockt@rio.gsic.titech.ac.jp">soraemonpockt@rio.gsic.titech.ac.jp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🎯</div>
+                        <div class="contact-details">
+                            <h4>
+                                <span class="lang-en">Competitive Programming</span>
+                                <span class="lang-ja">競技プログラミング</span>
+                            </h4>
+                            <div class="cp-links">
+                                <a href="https://atcoder.jp/users/Skygood" target="_blank">AtCoder</a>
+                                <a href="https://codeforces.com/profile/soraemonpockt" target="_blank">Codeforces</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://twitter.com/soraemonpockts" class="social-link twitter" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_tw.png" alt="Twitter">
+                        </div>
+                        <span>Twitter</span>
+                    </a>
+                    
+                    <a href="https://github.com/masora1030" class="social-link github" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_gh.png" alt="GitHub">
+                        </div>
+                        <span>GitHub</span>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/sora-takashima" class="social-link linkedin" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_li.png" alt="LinkedIn">
+                        </div>
+                        <span>LinkedIn</span>
+                    </a>
+                    
+                    <a href="https://www.facebook.com/soraemonpockt" class="social-link facebook" target="_blank">
+                        <div class="social-icon">
+                            <img src="static/img/contact/icon_fb.png" alt="Facebook">
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>
+                        <span class="lang-en">© 2025 Sora Takashima. Crafted with passion and lots of coffee ☕</span>
+                        <span class="lang-ja">© 2025 高島空良. 情熱とたくさんのコーヒーで作られました ☕</span>
+                    </p>
+                </div>
+                <button class="back-to-top" onclick="scrollToTop()">
+                    <span>↑</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="static/js/modern-portfolio-ultimate.js"></script>
+    <script src="static/js/epic-game.js"></script>
+</body>
+</html>
