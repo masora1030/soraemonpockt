@@ -249,10 +249,16 @@ class AccuratePortfolio {
         // Resize events
         window.addEventListener('resize', () => this.handleResize());
 
-        // Mystery icon interaction (Easter egg trigger)
-        const mysteryIcon = document.getElementById('mystery-icon');
-        if (mysteryIcon) {
-            mysteryIcon.addEventListener('click', () => this.activateEasterEgg());
+        // Mystery icon interaction (Easter egg trigger) - DISABLED
+        // const mysteryIcon = document.getElementById('mystery-icon');
+        // if (mysteryIcon) {
+        //     mysteryIcon.addEventListener('click', () => this.activateEasterEgg());
+        // }
+
+        // Profile image long press for game activation
+        const profileImg = document.querySelector('.profile-img');
+        if (profileImg) {
+            this.setupProfileLongPress(profileImg);
         }
 
         // Close navigation when clicking outside
@@ -399,6 +405,118 @@ class AccuratePortfolio {
         });
     }
 
+
+    setupProfileLongPress(profileImg) {
+        let longPressTimer = null;
+        let pressStart = 0;
+        let shakeLevel = 0;
+        let shakeInterval = null;
+        const LONG_PRESS_DURATION = 3000; // 3 seconds
+
+        // Mouse events
+        const startPress = (e) => {
+            e.preventDefault();
+            pressStart = Date.now();
+            shakeLevel = 0;
+            
+            // Start gradual shake effect
+            shakeInterval = setInterval(() => {
+                const elapsed = Date.now() - pressStart;
+                const progress = Math.min(elapsed / LONG_PRESS_DURATION, 1);
+                
+                if (progress < 1) {
+                    shakeLevel = Math.floor(progress * 5) + 1; // 1-5 levels
+                    this.applyShakeEffect(shakeLevel);
+                } else {
+                    // Long press completed - activate game
+                    this.completeProfileLongPress();
+                }
+            }, 100);
+
+            longPressTimer = setTimeout(() => {
+                this.completeProfileLongPress();
+            }, LONG_PRESS_DURATION);
+        };
+
+        const endPress = () => {
+            if (longPressTimer) {
+                clearTimeout(longPressTimer);
+                longPressTimer = null;
+            }
+            if (shakeInterval) {
+                clearInterval(shakeInterval);
+                shakeInterval = null;
+            }
+            this.stopShakeEffect();
+        };
+
+        // Add event listeners for both mouse and touch
+        profileImg.addEventListener('mousedown', startPress);
+        profileImg.addEventListener('mouseup', endPress);
+        profileImg.addEventListener('mouseleave', endPress);
+        profileImg.addEventListener('touchstart', startPress);
+        profileImg.addEventListener('touchend', endPress);
+        profileImg.addEventListener('touchcancel', endPress);
+
+        // Prevent context menu on long press
+        profileImg.addEventListener('contextmenu', (e) => e.preventDefault());
+    }
+
+    applyShakeEffect(level) {
+        const intensity = level * 8; // Much stronger intensity (increased from 2 to 8)
+        const randomX = (Math.random() - 0.5) * intensity;
+        const randomY = (Math.random() - 0.5) * intensity;
+        
+        // Apply stronger shake with rotation
+        const rotation = (Math.random() - 0.5) * level * 2; // Add rotation shake
+        document.body.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${rotation}deg)`;
+        document.body.style.transition = 'transform 0.05s ease-out'; // Faster transition for more intense effect
+
+        // Enhanced visual feedback on profile image
+        const profileImg = document.querySelector('.profile-img');
+        if (profileImg) {
+            const brightness = 1 + level * 0.2; // Stronger brightness change
+            const contrast = 1 + level * 0.2; // Stronger contrast change
+            const scale = 1 + level * 0.05; // Stronger scale change
+            const imageRotation = (Math.random() - 0.5) * level * 4; // Add rotation to image
+            
+            profileImg.style.filter = `brightness(${brightness}) contrast(${contrast}) saturate(${1 + level * 0.3})`;
+            profileImg.style.transform = `scale(${scale}) rotate(${imageRotation}deg)`;
+            profileImg.style.transition = 'all 0.05s ease-out';
+            
+            // Add glow effect at higher levels
+            if (level >= 3) {
+                profileImg.style.boxShadow = `0 0 ${level * 10}px rgba(255, 100, 100, 0.6)`;
+            }
+        }
+    }
+
+    stopShakeEffect() {
+        document.body.style.transform = '';
+        document.body.style.transition = '';
+        
+        const profileImg = document.querySelector('.profile-img');
+        if (profileImg) {
+            profileImg.style.filter = '';
+            profileImg.style.transform = '';
+            profileImg.style.boxShadow = '';
+            profileImg.style.transition = '';
+        }
+    }
+
+    completeProfileLongPress() {
+        // Clear any ongoing effects
+        this.stopShakeEffect();
+        
+        // Show notification
+        this.showNotification(this.currentLanguage === 'ja' ? 
+            'ゲーム起動中...' : 'Launching Game...');
+
+        // Small delay for dramatic effect
+        setTimeout(() => {
+            this.activateEasterEgg();
+        }, 500);
+    }
 
     activateEasterEgg() {
         // Show the hidden game
